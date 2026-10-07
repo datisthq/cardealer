@@ -68,7 +68,7 @@ dist/
 .venv
 uv.lock
 messages.js
-.user/
+.private/
 tmuxp.yaml
 /docs/reference/
 /.livemark/build/
