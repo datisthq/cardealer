@@ -46,7 +46,7 @@ importers:
         version: 9.6.0
       fairspec:
         specifier: 0.12.4
-        version: 0.12.4(express@5.2.1(supports-color@8.1.1))(hono@4.12.18)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(supports-color@8.1.1)(typescript@5.9.2)(xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz)
+        version: 0.12.4(express@5.2.1(supports-color@8.1.1))(hono@4.13.13)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(supports-color@8.1.1)(typescript@5.9.2)(xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz)
       json-schema-to-typescript:
         specifier: 15.0.4
         version: 15.0.4
@@ -4102,8 +4102,8 @@ packages:
   headers-polyfill@5.0.1:
     resolution: {integrity: sha512-1TJ6Fih/b8h5TIcv+1+Hw0PDQWJTKDKzFZzcKOiW1wJza3XoAQlkCuXLbymPYB8+ZQyw8mHvdw560e8zVFIWyA==}
 
-  hono@4.12.18:
-    resolution: {integrity: sha512-RWzP96k/yv0PQfyXnWjs6zot20TqfpfsNXhOnev8d1InAxubW93L11/oNUc3tQqn2G0bSdAOBpX+2uDFHV7kdQ==}
+  hono@4.13.13:
+    resolution: {integrity: sha512-CQ46U0ZkAGmbT/4UxdzzGJpacP2IeKgY4a5/tOI9AABbpOMfK739wfDXmv1usCk+3RkKj1hQy4/fjhiwa2xlrA==}
     engines: {node: '>=16.9.0'}
 
   html-void-elements@3.0.0:
@@ -5813,8 +5813,8 @@ packages:
       react: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
       react-dom: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
 
-  source-map-js@1.2.1:
-    resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
+  source-map-js@1.2.2:
+    resolution: {integrity: sha512-KGj/8Y43x35aZVDtt+J4mK1hoLGHULMYfSkODJNQjNDC3oW1PqPoxMwo0pLUsWM/UEGzON/NxeHywEfNXNP3Vw==}
     engines: {node: '>=0.10.0'}
 
   source-map@0.6.1:
@@ -7242,11 +7242,11 @@ snapshots:
   '@esbuild/win32-x64@0.27.7':
     optional: true
 
-  '@fairspec/agent@0.12.4(express@5.2.1(supports-color@8.1.1))(hono@4.12.18)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(supports-color@8.1.1)(typescript@5.9.2)(xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz)':
+  '@fairspec/agent@0.12.4(express@5.2.1(supports-color@8.1.1))(hono@4.13.13)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(supports-color@8.1.1)(typescript@5.9.2)(xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz)':
     dependencies:
       '@fairspec/library': 0.12.4(supports-color@8.1.1)(typescript@5.9.2)(xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz)
       '@mastra/core': 1.65.0(express@5.2.1(supports-color@8.1.1))(supports-color@8.1.1)(zod@4.3.6)
-      '@mastra/mcp': 1.17.3(@mastra/core@1.65.0(express@5.2.1(supports-color@8.1.1))(supports-color@8.1.1)(zod@4.3.6))(express@5.2.1(supports-color@8.1.1))(hono@4.12.18)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(supports-color@8.1.1)(zod@4.3.6)
+      '@mastra/mcp': 1.17.3(@mastra/core@1.65.0(express@5.2.1(supports-color@8.1.1))(supports-color@8.1.1)(zod@4.3.6))(express@5.2.1(supports-color@8.1.1))(hono@4.13.13)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(supports-color@8.1.1)(zod@4.3.6)
       zod: 4.3.6
     transitivePeerDependencies:
       - '@bufbuild/protobuf'
@@ -7338,11 +7338,11 @@ snapshots:
       - supports-color
       - typescript
 
-  '@fairspec/terminal@0.12.4(express@5.2.1(supports-color@8.1.1))(hono@4.12.18)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(supports-color@8.1.1)(typescript@5.9.2)(xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz)':
+  '@fairspec/terminal@0.12.4(express@5.2.1(supports-color@8.1.1))(hono@4.13.13)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(supports-color@8.1.1)(typescript@5.9.2)(xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz)':
     dependencies:
       '@bomb.sh/tab': 0.0.12(commander@14.0.3)
       '@commander-js/extra-typings': 14.0.0(commander@14.0.3)
-      '@fairspec/agent': 0.12.4(express@5.2.1(supports-color@8.1.1))(hono@4.12.18)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(supports-color@8.1.1)(typescript@5.9.2)(xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz)
+      '@fairspec/agent': 0.12.4(express@5.2.1(supports-color@8.1.1))(hono@4.13.13)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(supports-color@8.1.1)(typescript@5.9.2)(xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz)
       '@fairspec/library': 0.12.4(supports-color@8.1.1)(typescript@5.9.2)(xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz)
       commander: 14.0.3
       json-colorizer: 3.0.1
@@ -7390,9 +7390,9 @@ snapshots:
 
   '@glideapps/ts-necessities@2.4.0': {}
 
-  '@hono/node-server@1.19.17(hono@4.12.18)':
+  '@hono/node-server@1.19.17(hono@4.13.13)':
     dependencies:
-      hono: 4.12.18
+      hono: 4.13.13
 
   '@iconify/types@2.0.0': {}
 
@@ -7533,13 +7533,13 @@ snapshots:
       - utf-8-validate
       - workflow
 
-  '@mastra/mcp@1.17.3(@mastra/core@1.65.0(express@5.2.1(supports-color@8.1.1))(supports-color@8.1.1)(zod@4.3.6))(express@5.2.1(supports-color@8.1.1))(hono@4.12.18)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(supports-color@8.1.1)(zod@4.3.6)':
+  '@mastra/mcp@1.17.3(@mastra/core@1.65.0(express@5.2.1(supports-color@8.1.1))(supports-color@8.1.1)(zod@4.3.6))(express@5.2.1(supports-color@8.1.1))(hono@4.13.13)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(supports-color@8.1.1)(zod@4.3.6)':
     dependencies:
       '@mastra/core': 1.65.0(express@5.2.1(supports-color@8.1.1))(supports-color@8.1.1)(zod@4.3.6)
       '@modelcontextprotocol/client': 2.0.0
       '@modelcontextprotocol/core': 2.0.0
       '@modelcontextprotocol/ext-apps': 1.7.5(@modelcontextprotocol/sdk@1.29.0(supports-color@8.1.1)(zod@4.3.6))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(zod@4.3.6)
-      '@modelcontextprotocol/node': 2.0.0(@modelcontextprotocol/server@2.0.0)(hono@4.12.18)
+      '@modelcontextprotocol/node': 2.0.0(@modelcontextprotocol/server@2.0.0)(hono@4.13.13)
       '@modelcontextprotocol/sdk': 1.29.0(supports-color@8.1.1)(zod@4.3.6)
       '@modelcontextprotocol/server': 2.0.0
       '@modelcontextprotocol/server-legacy': 2.0.0(express@5.2.1(supports-color@8.1.1))
@@ -7628,16 +7628,16 @@ snapshots:
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
 
-  '@modelcontextprotocol/node@2.0.0(@modelcontextprotocol/server@2.0.0)(hono@4.12.18)':
+  '@modelcontextprotocol/node@2.0.0(@modelcontextprotocol/server@2.0.0)(hono@4.13.13)':
     dependencies:
-      '@hono/node-server': 1.19.17(hono@4.12.18)
+      '@hono/node-server': 1.19.17(hono@4.13.13)
       '@modelcontextprotocol/server': 2.0.0
     optionalDependencies:
-      hono: 4.12.18
+      hono: 4.13.13
 
   '@modelcontextprotocol/sdk@1.29.0(supports-color@8.1.1)(zod@3.25.76)':
     dependencies:
-      '@hono/node-server': 1.19.17(hono@4.12.18)
+      '@hono/node-server': 1.19.17(hono@4.13.13)
       ajv: 8.17.1
       ajv-formats: 3.0.1(ajv@8.17.1)
       content-type: 1.0.5
@@ -7647,7 +7647,7 @@ snapshots:
       eventsource-parser: 3.0.8
       express: 5.2.1(supports-color@8.1.1)
       express-rate-limit: 8.5.1(express@5.2.1(supports-color@8.1.1))
-      hono: 4.12.18
+      hono: 4.13.13
       jose: 6.2.3
       json-schema-typed: 8.0.2
       pkce-challenge: 5.0.1
@@ -7659,7 +7659,7 @@ snapshots:
 
   '@modelcontextprotocol/sdk@1.29.0(supports-color@8.1.1)(zod@4.3.6)':
     dependencies:
-      '@hono/node-server': 1.19.17(hono@4.12.18)
+      '@hono/node-server': 1.19.17(hono@4.13.13)
       ajv: 8.17.1
       ajv-formats: 3.0.1(ajv@8.17.1)
       content-type: 1.0.5
@@ -7669,7 +7669,7 @@ snapshots:
       eventsource-parser: 3.0.8
       express: 5.2.1(supports-color@8.1.1)
       express-rate-limit: 8.5.1(express@5.2.1(supports-color@8.1.1))
-      hono: 4.12.18
+      hono: 4.13.13
       jose: 6.2.3
       json-schema-typed: 8.0.2
       pkce-challenge: 5.0.1
@@ -8385,7 +8385,7 @@ snapshots:
       jiti: 2.7.0
       lightningcss: 1.32.0
       magic-string: 0.30.21
-      source-map-js: 1.2.1
+      source-map-js: 1.2.2
       tailwindcss: 4.2.4
 
   '@tailwindcss/oxide-android-arm64@4.2.4':
@@ -10305,10 +10305,10 @@ snapshots:
 
   extend@3.0.2: {}
 
-  fairspec@0.12.4(express@5.2.1(supports-color@8.1.1))(hono@4.12.18)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(supports-color@8.1.1)(typescript@5.9.2)(xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz):
+  fairspec@0.12.4(express@5.2.1(supports-color@8.1.1))(hono@4.13.13)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(supports-color@8.1.1)(typescript@5.9.2)(xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz):
     dependencies:
       '@fairspec/library': 0.12.4(supports-color@8.1.1)(typescript@5.9.2)(xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz)
-      '@fairspec/terminal': 0.12.4(express@5.2.1(supports-color@8.1.1))(hono@4.12.18)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(supports-color@8.1.1)(typescript@5.9.2)(xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz)
+      '@fairspec/terminal': 0.12.4(express@5.2.1(supports-color@8.1.1))(hono@4.13.13)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(supports-color@8.1.1)(typescript@5.9.2)(xlsx@https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz)
     transitivePeerDependencies:
       - '@bufbuild/protobuf'
       - '@cfworker/json-schema'
@@ -10735,7 +10735,7 @@ snapshots:
       '@types/set-cookie-parser': 2.4.10
       set-cookie-parser: 3.1.0
 
-  hono@4.12.18: {}
+  hono@4.13.13: {}
 
   html-void-elements@3.0.0: {}
 
@@ -12272,7 +12272,7 @@ snapshots:
     dependencies:
       nanoid: 3.3.19
       picocolors: 1.1.1
-      source-map-js: 1.2.1
+      source-map-js: 1.2.2
 
   posthog-node@5.51.8:
     dependencies:
@@ -12967,7 +12967,7 @@ snapshots:
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
 
-  source-map-js@1.2.1: {}
+  source-map-js@1.2.2: {}
 
   source-map@0.6.1: {}
 
