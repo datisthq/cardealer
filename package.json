@@ -1,15 +1,15 @@
 {
-  "name": "@fairspec-cardealer/root",
+  "name": "@cardealer/root",
   "version": "0.4.0",
   "private": true,
   "description": "Fairspec cardealer extension",
-  "homepage": "https://fairspec.github.io/fairspec-cardealer",
+  "homepage": "https://datisthq.github.io/cardealer",
   "author": "Evgeny Karev",
-  "repository": "https://github.com/datisthq/fairspec-cardealer",
+  "repository": "https://github.com/datisthq/cardealer",
   "type": "module",
   "scripts": {
     "build:py": "uv --directory python build",
-    "build:ts": "pnpm -F fairspec-* build",
+    "build:ts": "pnpm -F cardealer build",
     "deps": "ncu -ws -u --cooldown 7d",
     "configure": "node @configure.ts",
     "docs:build": "livemark build",
@@ -59,6 +59,6 @@
     "pnpm": "^11.0.0"
   },
   "packageManager": "pnpm@11.26.0+sha512.fc0e2bf890b9f983611f1ab68c0637bce914390653699f83c1a78b005ed25f2c81e77920c8fd8eee2ecf0b58b28cdcb00a84d97f69bcf7c56b2f344710238664",
-  "slug": "fairspec-cardealer",
+  "slug": "cardealer",
   "title": "Fairspec Cardealer"
 }

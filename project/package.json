@@ -1,5 +1,5 @@
 {
-  "name": "@fairspec-cardealer/project",
+  "name": "@cardealer/project",
   "version": "0.4.0",
   "private": true,
   "type": "module"

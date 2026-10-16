@@ -70,7 +70,7 @@ function Hero() {
             <ArrowRight className="size-4" />
           </Link>
           <a
-            href="https://github.com/datisthq/fairspec-cardealer"
+            href="https://github.com/datisthq/cardealer"
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
@@ -211,7 +211,7 @@ function CardealerSample() {
         <span className={tk.key}>"$schema"</span>
         <span className={tk.punct}>:</span>{" "}
         <span className={tk.url}>
-          "https://fairspec.github.io/fairspec-cardealer/profiles/0.4.0/dataset.json"
+          "https://datisthq.github.io/cardealer/profiles/0.4.0/dataset.json"
         </span>
         <span className={tk.punct}>,</span>
         {"\n  "}
@@ -227,7 +227,7 @@ function CardealerSample() {
         <span className={tk.key}>"schema"</span>
         <span className={tk.punct}>:</span>{" "}
         <span className={tk.url}>
-          "https://fairspec.github.io/fairspec-cardealer/schemas/0.4.0/dealer.json"
+          "https://datisthq.github.io/cardealer/schemas/0.4.0/dealer.json"
         </span>
         <span className={tk.punct}>,</span>
         {"\n      "}
@@ -264,7 +264,7 @@ function CardealerSample() {
         <span className={tk.key}>"schema"</span>
         <span className={tk.punct}>:</span>{" "}
         <span className={tk.url}>
-          "https://fairspec.github.io/fairspec-cardealer/schemas/0.4.0/car.json"
+          "https://datisthq.github.io/cardealer/schemas/0.4.0/car.json"
         </span>
         <span className={tk.punct}>,</span>
         {"\n      "}

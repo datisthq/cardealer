@@ -14,7 +14,7 @@ class CarResource(BaseModel):
     Data items have to conform to the Car table schema
     """
     tableSchema: Literal[
-        'https://fairspec.github.io/fairspec-cardealer/schemas/0.4.0/car.json'
+        'https://datisthq.github.io/cardealer/schemas/0.4.0/car.json'
     ]
 
 
@@ -25,7 +25,7 @@ class DealerResource(BaseModel):
     Data items have to conform to the Dealer table schema
     """
     tableSchema: Literal[
-        'https://fairspec.github.io/fairspec-cardealer/schemas/0.4.0/dealer.json'
+        'https://datisthq.github.io/cardealer/schemas/0.4.0/dealer.json'
     ]
 
 
@@ -36,7 +36,7 @@ class ShowroomResource(BaseModel):
     Data items have to conform to the Showroom table schema
     """
     tableSchema: Literal[
-        'https://fairspec.github.io/fairspec-cardealer/schemas/0.4.0/showroom.json'
+        'https://datisthq.github.io/cardealer/schemas/0.4.0/showroom.json'
     ]
 
 
@@ -46,7 +46,7 @@ class Resource(RootModel[Union[CarResource, DealerResource, ShowroomResource]]):
 
 class Dataset(BaseModel):
     field_schema: Literal[
-        'https://fairspec.github.io/fairspec-cardealer/profiles/0.4.0/dataset.json'
+        'https://datisthq.github.io/cardealer/profiles/0.4.0/dataset.json'
     ] = Field(..., alias='$schema')
     resources: Sequence[Resource] = Field(..., min_length=1)
 

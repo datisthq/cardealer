@@ -13,11 +13,11 @@ A basic example with a single dealer location and two car listings. When no show
 
 ```json
 {
-  "$schema": "https://fairspec.github.io/fairspec-cardealer/profiles/0.2.0/dataset.json",
+  "$schema": "https://datisthq.github.io/cardealer/profiles/0.2.0/dataset.json",
   "resources": [
     {
       "name": "dealer",
-      "schema": "https://fairspec.github.io/fairspec-cardealer/schemas/0.2.0/dealer.json",
+      "schema": "https://datisthq.github.io/cardealer/schemas/0.2.0/dealer.json",
       "data": [
         {
           "title": "Premium Auto Sales",
@@ -36,7 +36,7 @@ A basic example with a single dealer location and two car listings. When no show
     },
     {
       "name": "car",
-      "schema": "https://fairspec.github.io/fairspec-cardealer/schemas/0.2.0/car.json",
+      "schema": "https://datisthq.github.io/cardealer/schemas/0.2.0/car.json",
       "data": [
         {
           "title": "2023 Tesla Model 3 Long Range",
@@ -89,11 +89,11 @@ A dealer with a main location and additional showrooms, with cars distributed ac
 
 ```json
 {
-  "$schema": "https://fairspec.github.io/fairspec-cardealer/profiles/0.2.0/dataset.json",
+  "$schema": "https://datisthq.github.io/cardealer/profiles/0.2.0/dataset.json",
   "resources": [
     {
       "name": "dealer",
-      "schema": "https://fairspec.github.io/fairspec-cardealer/schemas/0.2.0/dealer.json",
+      "schema": "https://datisthq.github.io/cardealer/schemas/0.2.0/dealer.json",
       "data": [
         {
           "title": "Elite Motors Group",
@@ -112,7 +112,7 @@ A dealer with a main location and additional showrooms, with cars distributed ac
     },
     {
       "name": "showroom",
-      "schema": "https://fairspec.github.io/fairspec-cardealer/schemas/0.2.0/showroom.json",
+      "schema": "https://datisthq.github.io/cardealer/schemas/0.2.0/showroom.json",
       "data": [
         {
           "id": "showroom-downtown-sf",
@@ -146,7 +146,7 @@ A dealer with a main location and additional showrooms, with cars distributed ac
     },
     {
       "name": "car",
-      "schema": "https://fairspec.github.io/fairspec-cardealer/schemas/0.2.0/car.json",
+      "schema": "https://datisthq.github.io/cardealer/schemas/0.2.0/car.json",
       "data": [
         {
           "showroomId": "showroom-downtown-sf",
@@ -222,11 +222,11 @@ A minimal valid Cardealer DP file with only required fields.
 
 ```json
 {
-  "$schema": "https://fairspec.github.io/fairspec-cardealer/profiles/0.2.0/dataset.json",
+  "$schema": "https://datisthq.github.io/cardealer/profiles/0.2.0/dataset.json",
   "resources": [
     {
       "name": "dealer",
-      "schema": "https://fairspec.github.io/fairspec-cardealer/schemas/0.2.0/dealer.json",
+      "schema": "https://datisthq.github.io/cardealer/schemas/0.2.0/dealer.json",
       "data": [
         {
           "title": "Quick Auto Sales",
@@ -240,7 +240,7 @@ A minimal valid Cardealer DP file with only required fields.
     },
     {
       "name": "car",
-      "schema": "https://fairspec.github.io/fairspec-cardealer/schemas/0.2.0/car.json",
+      "schema": "https://datisthq.github.io/cardealer/schemas/0.2.0/car.json",
       "data": [
         {
           "title": "2021 Honda Civic LX",

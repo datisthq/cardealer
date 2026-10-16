@@ -7,8 +7,8 @@ authors:
   - family-names: Karev
     given-names: Evgeny
     email: evgeny.karev@datist.io
-url: "https://fairspec.github.io/fairspec-cardealer"
-repository-code: "https://github.com/datisthq/fairspec-cardealer"
+url: "https://datisthq.github.io/cardealer"
+repository-code: "https://github.com/datisthq/cardealer"
 license: MIT
 keywords:
   - fair

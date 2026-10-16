@@ -21,21 +21,21 @@ A Fairspec Cardealer file is a JSON document that follows the Fairspec specifica
 
 ```json
 {
-  "$schema": "https://fairspec.github.io/fairspec-cardealer/profiles/<version>/dataset.json",
+  "$schema": "https://datisthq.github.io/cardealer/profiles/<version>/dataset.json",
   "resources": [
     {
       "name": "car",
-      "schema": "https://fairspec.github.io/fairspec-cardealer/schemas/<version>/car.json",
+      "schema": "https://datisthq.github.io/cardealer/schemas/<version>/car.json",
       "data": [{...}, {...}, {...}]
     },
     {
       "name": "dealer",
-      "schema": "https://fairspec.github.io/fairspec-cardealer/schemas/<version>/dealer.json",
+      "schema": "https://datisthq.github.io/cardealer/schemas/<version>/dealer.json",
       "data": [{...}]
     },
     {
       "name": "showroom",
-      "schema": "https://fairspec.github.io/fairspec-cardealer/schemas/<version>/showroom.json",
+      "schema": "https://datisthq.github.io/cardealer/schemas/<version>/showroom.json",
       "data": [{...}, {...}]
     }
   ]

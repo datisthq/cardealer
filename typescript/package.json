@@ -1,11 +1,11 @@
 {
-  "name": "fairspec-cardealer",
+  "name": "cardealer",
   "version": "0.4.0",
   "description": "Fairspec cardealer extension",
-  "homepage": "https://fairspec.github.io/fairspec-cardealer",
+  "homepage": "https://datisthq.github.io/cardealer",
   "license": "MIT",
   "author": "Evgeny Karev",
-  "repository": "https://github.com/datisthq/fairspec-cardealer",
+  "repository": "https://github.com/datisthq/cardealer",
   "type": "module",
   "scripts": {
     "build": "tsgo",
@@ -15,6 +15,6 @@
     "@fairspec/metadata": "^0.2.2",
     "zod": "^4.3.5"
   },
-  "slug": "fairspec-cardealer",
+  "slug": "cardealer",
   "title": "Fairspec Cardealer"
 }

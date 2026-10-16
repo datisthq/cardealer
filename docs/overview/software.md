@@ -63,17 +63,17 @@ car = Car(
 
 dataset = Dataset(
     {
-        "$schema": "https://fairspec.github.io/fairspec-cardealer/profiles/0.2.0/dataset.json",
+        "$schema": "https://datisthq.github.io/cardealer/profiles/0.2.0/dataset.json",
         "resources": [
             {
                 "name": "car",
                 "data": [car],
-                "schema": "https://fairspec.github.io/fairspec-cardealer/schemas/0.2.0/car.json",
+                "schema": "https://datisthq.github.io/cardealer/schemas/0.2.0/car.json",
             },
             {
                 "name": "dealer",
                 "data": [dealer],
-                "schema": "https://fairspec.github.io/fairspec-cardealer/schemas/0.2.0/dealer.json",
+                "schema": "https://datisthq.github.io/cardealer/schemas/0.2.0/dealer.json",
             },
         ],
     }
@@ -114,7 +114,7 @@ npm install fairspec fairspec-extension
 ### Publication
 
 ```typescript
-import type { Car, Dealer, Package } from "fairspec-cardealer"
+import type { Car, Dealer, Package } from "cardealer"
 import { savePackageDescriptor } from "fairspec"
 
 const dealer: Dealer = {
@@ -153,17 +153,17 @@ const car: Car = {
 }
 
 const dataset: Dataset = {
-  $schema: "https://fairspec.github.io/fairspec-cardealer/profiles/0.2.0/dataset.json",
+  $schema: "https://datisthq.github.io/cardealer/profiles/0.2.0/dataset.json",
   resources: [
     {
       name: "car",
       data: [car],
-      schema: "https://fairspec.github.io/fairspec-cardealer/schemas/0.2.0/car.json",
+      schema: "https://datisthq.github.io/cardealer/schemas/0.2.0/car.json",
     },
     {
       name: "dealer",
       data: [dealer],
-      schema: "https://fairspec.github.io/fairspec-cardealer/schemas/0.2.0/dealer.json",
+      schema: "https://datisthq.github.io/cardealer/schemas/0.2.0/dealer.json",
     },
   ],
 }

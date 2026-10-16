@@ -1,5 +1,5 @@
 [project]
-name = "fairspec-cardealer"
+name = "cardealer"
 version = "0.4.0"
 description = "Fairspec cardealer extension"
 readme = "README.md"
@@ -11,15 +11,15 @@ classifiers = [
   "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = ["pydantic>=2.12", "typing-extensions>=4.15"]
-slug = "fairspec-cardealer"
+slug = "cardealer"
 title = "Fairspec Cardealer"
 
 [[project.authors]]
 name = "Evgeny Karev"
 
 [project.urls]
-homepage = "https://fairspec.github.io/fairspec-cardealer"
-repository = "https://github.com/datisthq/fairspec-cardealer"
+homepage = "https://datisthq.github.io/cardealer"
+repository = "https://github.com/datisthq/cardealer"
 
 [build-system]
 requires = ["hatchling"]

@@ -11,7 +11,7 @@
       "required": ["$schema", "resources"],
       "properties": {
         "$schema": {
-          "const": "https://fairspec.github.io/fairspec-cardealer/profiles/0.4.0/dataset.json"
+          "const": "https://datisthq.github.io/cardealer/profiles/0.4.0/dataset.json"
         },
         "resources": {
           "type": "array",
@@ -51,7 +51,7 @@
           }
         },
         "tableSchema": {
-          "const": "https://fairspec.github.io/fairspec-cardealer/schemas/0.4.0/car.json"
+          "const": "https://datisthq.github.io/cardealer/schemas/0.4.0/car.json"
         }
       }
     },
@@ -72,7 +72,7 @@
           }
         },
         "tableSchema": {
-          "const": "https://fairspec.github.io/fairspec-cardealer/schemas/0.4.0/dealer.json"
+          "const": "https://datisthq.github.io/cardealer/schemas/0.4.0/dealer.json"
         }
       }
     },
@@ -92,7 +92,7 @@
           }
         },
         "tableSchema": {
-          "const": "https://fairspec.github.io/fairspec-cardealer/schemas/0.4.0/showroom.json"
+          "const": "https://datisthq.github.io/cardealer/schemas/0.4.0/showroom.json"
         }
       }
     }

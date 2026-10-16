@@ -4,25 +4,25 @@ import { z } from "zod";
 export const CarResource = z.object({
     name: z.literal("car"),
     data: z.tuple([z.object({})]).rest(z.object({})),
-    Table: z.literal("https://fairspec.github.io/fairspec-cardealer/schemas/0.4.0/car.json")
+    Table: z.literal("https://datisthq.github.io/cardealer/schemas/0.4.0/car.json")
 });
 
 export const DealerResource = z.object({
     name: z.literal("dealer"),
     data: z.tuple([z.object({})]),
-    Table: z.literal("https://fairspec.github.io/fairspec-cardealer/schemas/0.4.0/dealer.json")
+    Table: z.literal("https://datisthq.github.io/cardealer/schemas/0.4.0/dealer.json")
 });
 
 export const ShowroomResource = z.object({
     name: z.literal("showroom"),
     data: z.tuple([z.object({})]).rest(z.object({})),
-    Table: z.literal("https://fairspec.github.io/fairspec-cardealer/schemas/0.4.0/showroom.json")
+    Table: z.literal("https://datisthq.github.io/cardealer/schemas/0.4.0/showroom.json")
 });
 
 export const Resource = z.union([CarResource, DealerResource, ShowroomResource]);
 
 export const Dataset = z.object({
-    $schema: z.literal("https://fairspec.github.io/fairspec-cardealer/profiles/0.4.0/dataset.json"),
+    $schema: z.literal("https://datisthq.github.io/cardealer/profiles/0.4.0/dataset.json"),
     resources: z.tuple([Resource]).rest(Resource)
 });
 
