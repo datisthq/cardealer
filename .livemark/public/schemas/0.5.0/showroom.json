@@ -1,0 +1,71 @@
+{
+  "$schema": "https://fairspec.org/profiles/0.3.0/table-schema.json",
+  "title": "Showroom",
+  "description": "A table schema describing a car dealer showroom",
+  "primaryKey": ["id"],
+  "required": ["id", "title", "country", "region", "city", "address"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the showroom",
+      "examples": ["showroom-downtown-123"]
+    },
+    "title": {
+      "type": "string",
+      "description": "The name of the showroom",
+      "examples": ["Downtown Auto Gallery"]
+    },
+    "country": {
+      "type": "string",
+      "description": "Country where the showroom is located",
+      "examples": ["United States"]
+    },
+    "region": {
+      "type": "string",
+      "description": "State or region within the country",
+      "examples": ["California"]
+    },
+    "city": {
+      "type": "string",
+      "description": "Closest city where the showroom is located",
+      "examples": ["Los Angeles"]
+    },
+    "address": {
+      "type": "string",
+      "description": "Street address of the showroom",
+      "examples": ["123 Main Street"]
+    },
+    "postcode": {
+      "type": "string",
+      "description": "Postal code of the showroom location",
+      "examples": ["90210"]
+    },
+    "phone": {
+      "type": "string",
+      "description": "Contact phone number for the showroom",
+      "examples": ["+1-555-123-4567"]
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Contact email address for the showroom",
+      "examples": ["info@downtownauto.com"]
+    },
+    "url": {
+      "type": "string",
+      "format": "url",
+      "description": "URL to the showroom",
+      "examples": ["https://www.downtownauto.com"]
+    },
+    "lon": {
+      "type": "number",
+      "description": "Longitude coordinate of the showroom location",
+      "examples": [-118.2437]
+    },
+    "lat": {
+      "type": "number",
+      "description": "Latitude coordinate of the showroom location",
+      "examples": [34.0522]
+    }
+  }
+}

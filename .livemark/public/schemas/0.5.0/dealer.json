@@ -1,0 +1,66 @@
+{
+  "$schema": "https://fairspec.org/profiles/0.3.0/table-schema.json",
+  "title": "Dealer",
+  "description": "A table schema describing a car dealer",
+  "primaryKey": ["url"],
+  "required": ["title", "country", "region", "city", "address", "url"],
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "The name of the dealer",
+      "examples": ["Downtown Auto Gallery"]
+    },
+    "country": {
+      "type": "string",
+      "description": "Country where the dealer is located",
+      "examples": ["United States"]
+    },
+    "region": {
+      "type": "string",
+      "description": "State or region within the country",
+      "examples": ["California"]
+    },
+    "city": {
+      "type": "string",
+      "description": "Closest city where the dealer is located",
+      "examples": ["Los Angeles"]
+    },
+    "address": {
+      "type": "string",
+      "description": "Street address of the dealer",
+      "examples": ["123 Main Street"]
+    },
+    "postcode": {
+      "type": "string",
+      "description": "Postal code of the dealer location",
+      "examples": ["90210"]
+    },
+    "phone": {
+      "type": "string",
+      "description": "Contact phone number for the dealer",
+      "examples": ["+1-555-123-4567"]
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Contact email address for the dealer",
+      "examples": ["info@downtownauto.com"]
+    },
+    "url": {
+      "type": "string",
+      "format": "url",
+      "description": "URL to the dealer website",
+      "examples": ["https://www.downtownauto.com"]
+    },
+    "lon": {
+      "type": "number",
+      "description": "Longitude coordinate of the dealer location",
+      "examples": [-118.2437]
+    },
+    "lat": {
+      "type": "number",
+      "description": "Latitude coordinate of the dealer location",
+      "examples": [34.0522]
+    }
+  }
+}
