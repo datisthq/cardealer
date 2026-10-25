@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.5.0](https://github.com/datisthq/cardealer/compare/v0.4.0...v0.5.0) (2026-10-25)
+
+
+### Features
+
+* rename to cardealer under datisthq ([8c06a8c](https://github.com/datisthq/cardealer/commit/8c06a8c1a44e0e6bee1a2b0adf16c8258d79caec))
+
+
+### Bug Fixes
+
+* **ci:** look up the release PR instead of reading the action output ([15d8f81](https://github.com/datisthq/cardealer/commit/15d8f812c84169fc07a8abc07d158ec428a47824))
+
 ## [0.4.0](https://github.com/datisthq/cardealer/compare/v0.3.0...v0.4.0) (2026-01-22)
 
 ### Features
