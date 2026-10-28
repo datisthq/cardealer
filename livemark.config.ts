@@ -8,6 +8,8 @@ export default defineConfig({
   base: command => (command === "build" ? pathname : "/"),
   title: packageJson.title,
   description: packageJson.description,
+  banner:
+    "Cardealer is in technical preview · [Share feedback →](https://github.com/datisthq/cardealer/discussions)",
   logo: "/logo.svg",
   favicon: "/logo.png",
   include: ["standard/**/*.md", "README.md", "CONTRIBUTING.md"],
