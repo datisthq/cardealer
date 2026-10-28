@@ -1,0 +1,389 @@
+[
+  {
+    "description": "facility type",
+    "tests": [
+      {
+        "description": "type showroom is valid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "showroom",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street"
+        },
+        "valid": true
+      },
+      {
+        "description": "type service is valid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "service",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street"
+        },
+        "valid": true
+      },
+      {
+        "description": "type warehouse is valid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "warehouse",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street"
+        },
+        "valid": true
+      },
+      {
+        "description": "type delivery is valid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "delivery",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street"
+        },
+        "valid": true
+      },
+      {
+        "description": "type office is valid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "office",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street"
+        },
+        "valid": true
+      },
+      {
+        "description": "a facility without type is invalid",
+        "data": {
+          "id": "facility-downtown-123",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street"
+        },
+        "valid": false
+      },
+      {
+        "description": "type garage is invalid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "garage",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street"
+        },
+        "valid": false
+      },
+      {
+        "description": "type in upper case is invalid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "Showroom",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street"
+        },
+        "valid": false
+      },
+      {
+        "description": "a null type is invalid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": null,
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street"
+        },
+        "valid": false
+      }
+    ]
+  },
+  {
+    "description": "number columns",
+    "tests": [
+      {
+        "description": "fractional coordinates are valid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "showroom",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street",
+          "lon": -118.2437,
+          "lat": 34.0522
+        },
+        "valid": true
+      },
+      {
+        "description": "a string lon is invalid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "showroom",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street",
+          "lon": "-118.2437"
+        },
+        "valid": false
+      },
+      {
+        "description": "a string lat is invalid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "showroom",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street",
+          "lat": "34.0522"
+        },
+        "valid": false
+      },
+      {
+        "description": "a boolean lon is invalid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "showroom",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street",
+          "lon": true
+        },
+        "valid": false
+      },
+      {
+        "description": "a null lat is invalid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "showroom",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street",
+          "lat": null
+        },
+        "valid": false
+      }
+    ]
+  },
+  {
+    "description": "string columns",
+    "tests": [
+      {
+        "description": "a numeric id is invalid",
+        "data": {
+          "id": 1,
+          "type": "showroom",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street"
+        },
+        "valid": false
+      },
+      {
+        "description": "a numeric title is invalid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "showroom",
+          "title": 1,
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street"
+        },
+        "valid": false
+      },
+      {
+        "description": "a numeric country is invalid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "showroom",
+          "title": "Downtown Auto Gallery",
+          "country": 1,
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street"
+        },
+        "valid": false
+      },
+      {
+        "description": "a numeric region is invalid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "showroom",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": 1,
+          "city": "Los Angeles",
+          "address": "123 Main Street"
+        },
+        "valid": false
+      },
+      {
+        "description": "a numeric city is invalid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "showroom",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": 1,
+          "address": "123 Main Street"
+        },
+        "valid": false
+      },
+      {
+        "description": "a numeric address is invalid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "showroom",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": 1
+        },
+        "valid": false
+      },
+      {
+        "description": "a numeric postcode is invalid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "showroom",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street",
+          "postcode": 1
+        },
+        "valid": false
+      },
+      {
+        "description": "a numeric phone is invalid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "showroom",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street",
+          "phone": 1
+        },
+        "valid": false
+      },
+      {
+        "description": "a numeric email is invalid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "showroom",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street",
+          "email": 1
+        },
+        "valid": false
+      },
+      {
+        "description": "a numeric url is invalid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "showroom",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street",
+          "url": 1
+        },
+        "valid": false
+      }
+    ]
+  },
+  {
+    "description": "null values",
+    "tests": [
+      {
+        "description": "a null postcode is invalid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "showroom",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street",
+          "postcode": null
+        },
+        "valid": false
+      },
+      {
+        "description": "a null id is invalid",
+        "data": {
+          "id": null,
+          "type": "showroom",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street"
+        },
+        "valid": false
+      }
+    ]
+  },
+  {
+    "description": "unknown columns",
+    "tests": [
+      {
+        "description": "a facility with an unknown column is valid",
+        "data": {
+          "id": "facility-downtown-123",
+          "type": "showroom",
+          "title": "Downtown Auto Gallery",
+          "country": "United States",
+          "region": "California",
+          "city": "Los Angeles",
+          "address": "123 Main Street",
+          "openingHours": "9-18"
+        },
+        "valid": true
+      }
+    ]
+  }
+]

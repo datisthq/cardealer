@@ -1,33 +1,34 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
 
-  "include": ["${configDir}/**/*.ts", "${configDir}/**/*.tsx"],
-  "exclude": ["${configDir}/**/extension/", "${configDir}/**/build/"],
+  "include": [
+    "${configDir}/*.ts",
+    "${configDir}/.scripts/**/*.ts",
+    "${configDir}/.livemark/**/*.ts",
+    "${configDir}/.livemark/**/*.tsx"
+  ],
+  "exclude": [
+    "${configDir}/**/build/",
+    "${configDir}/.livemark/build/",
+    "${configDir}/.livemark/.target/",
+    "${configDir}/node_modules"
+  ],
 
   "compilerOptions": {
-    "target": "ES2022",
+    "target": "ES2024",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "outDir": "${configDir}/build",
 
-    "lib": ["ESNext"],
-    "types": ["node"],
-    "jsx": "react",
+    "lib": ["ESNext", "DOM"],
+    "types": ["node", "vite/client"],
+    "jsx": "react-jsx",
 
     "strict": true,
     "isolatedModules": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "erasableSyntaxOnly": true,
-    "noUncheckedIndexedAccess": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "inlineSourceMap": true,
-    "inlineSources": true,
     "skipLibCheck": true,
 
-    "declaration": true,
     "rewriteRelativeImportExtensions": true
   }
 }

@@ -1,0 +1,673 @@
+[
+  {
+    "description": "fuel values",
+    "tests": [
+      {
+        "description": "fuel diesel is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "diesel",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "fuel petrol is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "petrol",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "fuel hybrid is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "hybrid",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "fuel electric is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "fuel gas is invalid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "gas",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": false
+      },
+      {
+        "description": "fuel in upper case is invalid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "DIESEL",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": false
+      }
+    ]
+  },
+  {
+    "description": "gearbox values",
+    "tests": [
+      {
+        "description": "gearbox manual is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "manual",
+          "category": "saloon",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "gearbox auto is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "gearbox automatic is invalid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "automatic",
+          "category": "saloon",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": false
+      },
+      {
+        "description": "gearbox in upper case is invalid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "MANUAL",
+          "category": "saloon",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": false
+      }
+    ]
+  },
+  {
+    "description": "category values",
+    "tests": [
+      {
+        "description": "category small is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "small",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "category estate is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "estate",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "category saloon is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "category suv is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "suv",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "category van is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "van",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "category sport is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "sport",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "category cabrio is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "cabrio",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "category truck is invalid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "truck",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": false
+      },
+      {
+        "description": "category in upper case is invalid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "SMALL",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": false
+      }
+    ]
+  },
+  {
+    "description": "color values",
+    "tests": [
+      {
+        "description": "color grey is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "grey",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "color black is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "black",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "color white is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "color blue is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "blue",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "color red is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "red",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "color green is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "green",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "color yellow is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "yellow",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "color orange is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "orange",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "color purple is invalid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "purple",
+          "door": "fourfive"
+        },
+        "valid": false
+      },
+      {
+        "description": "color in upper case is invalid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "GREY",
+          "door": "fourfive"
+        },
+        "valid": false
+      }
+    ]
+  },
+  {
+    "description": "door values",
+    "tests": [
+      {
+        "description": "door twothree is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "white",
+          "door": "twothree"
+        },
+        "valid": true
+      },
+      {
+        "description": "door fourfive is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "white",
+          "door": "fourfive"
+        },
+        "valid": true
+      },
+      {
+        "description": "door sixseven is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "white",
+          "door": "sixseven"
+        },
+        "valid": true
+      },
+      {
+        "description": "door four is invalid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "white",
+          "door": "four"
+        },
+        "valid": false
+      },
+      {
+        "description": "door in upper case is invalid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "white",
+          "door": "TWOTHREE"
+        },
+        "valid": false
+      }
+    ]
+  }
+]

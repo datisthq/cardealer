@@ -12,6 +12,8 @@ Here you can find the guidelines for contributing to the extension. We welcome a
 - **Development**:
   - Node 24+ (with pnpm) - [How to Install](https://nodejs.org/en/download/current)
   - Python 3.12+ (with uv) - [How to Install](https://docs.astral.sh/uv/getting-started/installation)
+  - Rust (with cargo) - [How to Install](https://www.rust-lang.org/tools/install)
+  - A [Fairspec](https://github.com/datisthq/fairspec) checkout beside this repository (`../fairspec`), with `pnpm -C ../fairspec/typescript build` run once - the libraries build on its unreleased base libraries
 - **Releasing**:
   - Configured a pending trusted publisher on [PyPI](https://pypi.org/manage/account/publishing/) matching the extension name (slug)
   - Created an access token on [NPM](https://www.npmjs.com/settings/roll/tokens), added to [Github](https://github.com/datisthq/cardealer/settings/secrets/actions) as a repository secret `NPM_TOKEN`
@@ -24,21 +26,20 @@ Here you can find the guidelines for contributing to the extension. We welcome a
 
 ### Getting Started
 
-Start by cloning the repository or its fork, installing the dependencies, configuring the extension, and starting the site:
+Start by cloning the repository or its fork, installing the dependencies, and starting the site:
 
 ```bash
 git clone https://github.com/datisthq/cardealer.git
 cd cardealer
 pnpm install
-pnpm configure
 pnpm start
 ```
 
 ### Managing the Project
 
 - **`pnpm install`** - Install dependencies
-- **`pnpm configure`** - Configure extension metadata (slug, title, description, etc.)
-- **`pnpm generate`** - Generate TypeScript and Python SDKs from schemas
+- **`pnpm build`** - Build the TypeScript, Python and Rust packages
+- **`pnpm publish:profiles`** - Publish the current version's profiles and schemas to the site
 - **`pnpm format`** - Format the project files to consistent style
 - **`pnpm start`** - Start the documentation site in development mode
 - **`pnpm test`** - Verify project integrity
@@ -47,21 +48,15 @@ pnpm start
 
 The fiels you need to edit to update the extension:
 
-- **docs/profiles/** - Edit the profile to model your dataset
-- **docs/schemas/** - Edit the schemas to model your data tables
+- **standard/profiles/** - Edit the profile to model your dataset
+- **standard/schemas/** - Edit the schemas to model your data tables
+- **standard/specs/** - Edit the specification prose
+- **standard/overview/** - Edit the overview and examples
+- **typescript/**, **python/**, **rust/** - Edit the three libraries to match
+- **conformance/** - Edit the cases that pin the behaviour
 - **.livemark/routes/index.tsx** - Edit the homepage
-- **docs/overview/** - Edit not generated documentation pages
 
-The rest of the files are generic or generated and should not be edited directly unless you want a more granular control over the extension development.
-
-### Generating SDKs
-
-If you modify the profile or schemas, you need to generate the SDKs and commit the changes:
-
-```bash
-pnpm generate
-git commit -am "My changes"
-```
+There are no generators: a change to the standard is carried by hand into the specification, all three libraries and the conformance cases in the same pull request. The `.agents/skills/standard-development` skill is the checklist.
 
 ## Releasing
 
@@ -71,4 +66,4 @@ git commit -am "My changes"
 After your pull request is ready to be merged, you can release a new version of the extension by merging the pull request into the `main` branch:
 
 1. Squash and merge the PR using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary).
-2. In case you use it on GitHub, Github Actions will automatically create a new release, publish the extension to PyPI and NPM, and publish the documentation to GitHub Pages.
+2. In case you use it on GitHub, Github Actions will automatically create a new release (publishing to PyPI and NPM waits for the Fairspec base libraries to be released), publish the documentation to GitHub Pages.

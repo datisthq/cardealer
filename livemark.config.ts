@@ -10,8 +10,8 @@ export default defineConfig({
   description: packageJson.description,
   logo: "/logo.svg",
   favicon: "/logo.png",
-  include: ["docs/**/*.md", "README.md", "CONTRIBUTING.md"],
-  exclude: ["docs/profiles/**", "docs/schemas/**"],
+  include: ["standard/**/*.md", "README.md", "CONTRIBUTING.md"],
+  exclude: ["standard/profiles/**", "standard/schemas/**", "standard/node_modules/**"],
   sections: [
     { title: "Docs", prefix: "/", icon: "book-open" },
     {

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://fairspec.org/profiles/0.6.1/table-schema.json",
+  "title": "Facility",
+  "description": "A table schema describing a dealer facility",
+  "primaryKey": ["id"],
+  "required": ["id", "type", "title", "country", "region", "city", "address"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the facility",
+      "examples": ["facility-downtown-123"]
+    },
+    "type": {
+      "type": "string",
+      "description": "Kind of facility: showroom (sales site where cars are displayed, indoor or open-air), service (servicing, mechanical and body repair), warehouse (storage of stock not on display), delivery (handover or pick-up point), office (administrative site with no cars on site)",
+      "examples": ["showroom"],
+      "enum": ["showroom", "service", "warehouse", "delivery", "office"]
+    },
+    "title": {
+      "type": "string",
+      "description": "The name of the facility",
+      "examples": ["Downtown Auto Gallery"]
+    },
+    "country": {
+      "type": "string",
+      "description": "Country where the facility is located",
+      "examples": ["United States"]
+    },
+    "region": {
+      "type": "string",
+      "description": "State or region within the country",
+      "examples": ["California"]
+    },
+    "city": {
+      "type": "string",
+      "description": "Closest city where the facility is located",
+      "examples": ["Los Angeles"]
+    },
+    "address": {
+      "type": "string",
+      "description": "Street address of the facility",
+      "examples": ["123 Main Street"]
+    },
+    "postcode": {
+      "type": "string",
+      "description": "Postal code of the facility location",
+      "examples": ["90210"]
+    },
+    "phone": {
+      "type": "string",
+      "description": "Contact phone number for the facility",
+      "examples": ["+1-555-123-4567"]
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Contact email address for the facility",
+      "examples": ["info@downtownauto.com"]
+    },
+    "url": {
+      "type": "string",
+      "format": "url",
+      "description": "URL to the facility",
+      "examples": ["https://www.downtownauto.com"]
+    },
+    "lon": {
+      "type": "number",
+      "description": "Longitude coordinate of the facility location",
+      "examples": [-118.2437]
+    },
+    "lat": {
+      "type": "number",
+      "description": "Latitude coordinate of the facility location",
+      "examples": [34.0522]
+    }
+  }
+}

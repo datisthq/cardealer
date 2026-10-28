@@ -125,7 +125,7 @@ const features: Feature[] = [
     icon: FileJson2,
     title: "Complete",
     description:
-      "Covers cars, showrooms, and dealer details — including foreign keys between resources for multi-location dealerships.",
+      "Covers cars, facilities, and dealer details — including foreign keys between resources for multi-location dealerships.",
   },
   {
     icon: BookOpen,
@@ -135,9 +135,9 @@ const features: Feature[] = [
   },
   {
     icon: Wand2,
-    title: "Automatic",
+    title: "Proven",
     description:
-      "Python and TypeScript SDKs are generated from the schemas — no hand-written models, no drift between languages.",
+      "Hand-written TypeScript, Python and Rust libraries on Fairspec's own, proven against one conformance suite.",
   },
   {
     icon: GitBranch,
@@ -318,7 +318,7 @@ function Showcase() {
               One JSON file. Every car listing.
             </h2>
             <p className="mt-4 text-muted-foreground text-lg">
-              Describe your dealer, your showrooms, and your cars in a single file —
+              Describe your dealer, your facilities, and your cars in a single file —
               validated against shared schemas.
             </p>
           </div>
@@ -391,6 +391,7 @@ const stackItems = [
   "JSON Schema 2020-12",
   "Python",
   "TypeScript",
+  "Rust",
   "Livemark",
 ]
 

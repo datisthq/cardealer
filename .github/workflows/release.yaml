@@ -68,22 +68,22 @@ jobs:
       - name: Install Dependencies
         if: steps.branch.outputs.name != ''
         run: pnpm install
-      - name: Generate Packages
+      - name: Publish Profiles
         if: steps.branch.outputs.name != ''
-        run: pnpm generate
-      - name: Commit Packages
+        run: pnpm publish:profiles
+      - name: Commit Profiles
         if: steps.branch.outputs.name != ''
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/profiles docs/specification .livemark/public/profiles \
-            .livemark/public/schemas typescript/models python
-          git diff --cached --quiet || git commit -m "chore: generate the versioned packages"
+          git add .livemark/public
+          git diff --cached --quiet || git commit -m "chore: publish the versioned profiles"
           git push
 
   publish:
+    name: Publish (blocked until fairspec releases its base libraries)
+    if: false
     needs: [release]
-    if: needs.release.outputs.created == 'true'
     environment: release
     runs-on: ubuntu-latest
 
@@ -105,7 +105,7 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
       - name: Build Packages
-        run: pnpm /build/
+        run: pnpm build
       - name: Publish Packages
         run: pnpm /release/
 

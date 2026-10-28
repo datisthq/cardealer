@@ -1,11 +1,12 @@
-import * as standard from "@fairspec/metadata"
-import { z } from "zod"
-import * as extension from "./models/dataset.ts"
-
-export * from "./models/index.ts"
-
-export const Dataset = z.intersection(standard.Dataset, extension.Dataset)
-export const Resource = z.intersection(standard.Resource, extension.Resource)
-
-export type Dataset = z.infer<typeof Dataset>
-export type Resource = z.infer<typeof Resource>
+export { VERSION } from "./settings.ts"
+export { Car } from "./models/car.ts"
+export { Dealer } from "./models/dealer.ts"
+export { Dataset } from "./models/dataset.ts"
+export { Category, Color, Door, FacilityType, Fuel, Gearbox } from "./models/enums.ts"
+export { Facility } from "./models/facility.ts"
+export {
+  CarResource,
+  CardealerResource,
+  DealerResource,
+  FacilityResource,
+} from "./models/resource.ts"

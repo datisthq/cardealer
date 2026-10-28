@@ -75,3 +75,9 @@ tmuxp.yaml
 /.claude/
 /.cursor/
 .tanstack/
+
+# Rust
+rust/target/
+
+# Python
+__pycache__/

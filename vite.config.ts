@@ -1,8 +1,11 @@
 import { defineConfig } from "vite-plus"
 
-const ignorePatterns = ["CHANGELOG.md", "**/models/**", "**/specification/**"]
+const ignorePatterns = ["CHANGELOG.md"]
 
 export default defineConfig({
+  test: {
+    include: [".scripts/-test/*.unit.ts"],
+  },
   fmt: {
     semi: false,
     printWidth: 90,

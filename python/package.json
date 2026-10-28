@@ -1,0 +1,12 @@
+{
+  "name": "@cardealer/python",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "uv build",
+    "setup": "uv sync",
+    "test": "pnpm type && pnpm test:unit",
+    "test:unit": "uv run pytest",
+    "type": "uv run ty check"
+  }
+}

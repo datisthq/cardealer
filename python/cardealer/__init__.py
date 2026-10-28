@@ -1,6 +1,35 @@
-from .profile import Package
-from .profile import Resource
+from .models import (
+    Car,
+    CarResource,
+    CardealerResource,
+    Category,
+    Color,
+    Dataset,
+    Dealer,
+    DealerResource,
+    Door,
+    Facility,
+    FacilityResource,
+    FacilityType,
+    Fuel,
+    Gearbox,
+)
+from .settings import VERSION
 
-from .models import *
-
-__all__ = ["Dataset", "Resource"]
+__all__ = [
+    "VERSION",
+    "Car",
+    "CarResource",
+    "CardealerResource",
+    "Category",
+    "Color",
+    "Dataset",
+    "Dealer",
+    "DealerResource",
+    "Door",
+    "Facility",
+    "FacilityResource",
+    "FacilityType",
+    "Fuel",
+    "Gearbox",
+]

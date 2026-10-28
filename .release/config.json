@@ -6,8 +6,58 @@
     }
   },
   "extra-files": [
-    { "type": "json", "path": "project/package.json", "jsonpath": "$.version" },
-    { "type": "json", "path": "typescript/package.json", "jsonpath": "$.version" },
-    { "type": "toml", "path": "python/pyproject.toml", "jsonpath": "$.project.version" }
+    {
+      "type": "json",
+      "path": "standard/package.json",
+      "jsonpath": "$.version"
+    },
+    {
+      "type": "json",
+      "path": "typescript/package.json",
+      "jsonpath": "$.version"
+    },
+    {
+      "type": "toml",
+      "path": "python/pyproject.toml",
+      "jsonpath": "$.project.version"
+    },
+    {
+      "type": "toml",
+      "path": "rust/Cargo.toml",
+      "jsonpath": "$.workspace.package.version"
+    },
+    {
+      "type": "toml",
+      "path": "rust/Cargo.lock",
+      "jsonpath": "$.package[?(@.name.value === 'cardealer')].version"
+    },
+    {
+      "type": "generic",
+      "path": "typescript/settings.ts"
+    },
+    {
+      "type": "generic",
+      "path": "python/cardealer/settings.py"
+    },
+    {
+      "type": "generic",
+      "path": "python/cardealer/models/dataset.py"
+    },
+    {
+      "type": "generic",
+      "path": "python/cardealer/models/resource.py"
+    },
+    {
+      "type": "generic",
+      "path": "rust/cardealer/src/settings.rs"
+    },
+    {
+      "type": "generic",
+      "path": "rust/cardealer/src/models/dataset.rs"
+    },
+    {
+      "type": "generic",
+      "path": "rust/cardealer/src/models/resource.rs"
+    }
   ]
 }

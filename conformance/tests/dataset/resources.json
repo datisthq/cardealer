@@ -1,0 +1,523 @@
+[
+  {
+    "description": "resource kinds",
+    "tests": [
+      {
+        "description": "car, dealer and facility resources are valid",
+        "data": {
+          "$schema": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json",
+          "resources": [
+            {
+              "name": "car",
+              "data": [
+                {
+                  "title": "2023 Tesla Model 3 Long Range",
+                  "url": "https://example.com/cars/tesla-model-3-2023",
+                  "price": 45990,
+                  "currency": "EUR",
+                  "mileage": 15000,
+                  "brand": "Tesla",
+                  "model": "Model 3",
+                  "version": "Long Range AWD",
+                  "fuel": "electric",
+                  "gearbox": "auto",
+                  "category": "saloon",
+                  "color": "white",
+                  "door": "fourfive"
+                }
+              ],
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/car.json"
+            },
+            {
+              "name": "dealer",
+              "data": [
+                {
+                  "title": "Downtown Auto Gallery",
+                  "country": "United States",
+                  "region": "California",
+                  "city": "Los Angeles",
+                  "address": "123 Main Street",
+                  "url": "https://www.downtownauto.com"
+                }
+              ],
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/dealer.json"
+            },
+            {
+              "name": "facility",
+              "data": [
+                {
+                  "id": "facility-downtown-123",
+                  "type": "showroom",
+                  "title": "Downtown Auto Gallery",
+                  "country": "United States",
+                  "region": "California",
+                  "city": "Los Angeles",
+                  "address": "123 Main Street"
+                }
+              ],
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/facility.json"
+            }
+          ]
+        },
+        "valid": true
+      },
+      {
+        "description": "a dealer resource alone is valid",
+        "data": {
+          "$schema": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json",
+          "resources": [
+            {
+              "name": "dealer",
+              "data": [
+                {
+                  "title": "Downtown Auto Gallery",
+                  "country": "United States",
+                  "region": "California",
+                  "city": "Los Angeles",
+                  "address": "123 Main Street",
+                  "url": "https://www.downtownauto.com"
+                }
+              ],
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/dealer.json"
+            }
+          ]
+        },
+        "valid": true
+      },
+      {
+        "description": "a car resource alone is valid",
+        "data": {
+          "$schema": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json",
+          "resources": [
+            {
+              "name": "car",
+              "data": [
+                {
+                  "title": "2023 Tesla Model 3 Long Range",
+                  "url": "https://example.com/cars/tesla-model-3-2023",
+                  "price": 45990,
+                  "currency": "EUR",
+                  "mileage": 15000,
+                  "brand": "Tesla",
+                  "model": "Model 3",
+                  "version": "Long Range AWD",
+                  "fuel": "electric",
+                  "gearbox": "auto",
+                  "category": "saloon",
+                  "color": "white",
+                  "door": "fourfive"
+                }
+              ],
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/car.json"
+            }
+          ]
+        },
+        "valid": true
+      },
+      {
+        "description": "a facility resource alone is valid",
+        "data": {
+          "$schema": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json",
+          "resources": [
+            {
+              "name": "facility",
+              "data": [
+                {
+                  "id": "facility-downtown-123",
+                  "type": "showroom",
+                  "title": "Downtown Auto Gallery",
+                  "country": "United States",
+                  "region": "California",
+                  "city": "Los Angeles",
+                  "address": "123 Main Street"
+                }
+              ],
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/facility.json"
+            }
+          ]
+        },
+        "valid": true
+      },
+      {
+        "description": "no resources is invalid",
+        "data": {
+          "$schema": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json",
+          "resources": []
+        },
+        "valid": false
+      },
+      {
+        "description": "a dataset without resources is invalid",
+        "data": {
+          "$schema": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json"
+        },
+        "valid": false
+      },
+      {
+        "description": "a resource named showroom is invalid",
+        "data": {
+          "$schema": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json",
+          "resources": [
+            {
+              "name": "dealer",
+              "data": [
+                {
+                  "title": "Downtown Auto Gallery",
+                  "country": "United States",
+                  "region": "California",
+                  "city": "Los Angeles",
+                  "address": "123 Main Street",
+                  "url": "https://www.downtownauto.com"
+                }
+              ],
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/dealer.json"
+            },
+            {
+              "name": "showroom",
+              "data": [
+                {
+                  "id": "facility-downtown-123",
+                  "type": "showroom",
+                  "title": "Downtown Auto Gallery",
+                  "country": "United States",
+                  "region": "California",
+                  "city": "Los Angeles",
+                  "address": "123 Main Street"
+                }
+              ],
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/showroom.json"
+            }
+          ]
+        },
+        "valid": false
+      },
+      {
+        "description": "a resource named truck is invalid",
+        "data": {
+          "$schema": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json",
+          "resources": [
+            {
+              "name": "dealer",
+              "data": [
+                {
+                  "title": "Downtown Auto Gallery",
+                  "country": "United States",
+                  "region": "California",
+                  "city": "Los Angeles",
+                  "address": "123 Main Street",
+                  "url": "https://www.downtownauto.com"
+                }
+              ],
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/dealer.json"
+            },
+            {
+              "name": "truck",
+              "data": [
+                {
+                  "title": "2023 Tesla Model 3 Long Range",
+                  "url": "https://example.com/cars/tesla-model-3-2023",
+                  "price": 45990,
+                  "currency": "EUR",
+                  "mileage": 15000,
+                  "brand": "Tesla",
+                  "model": "Model 3",
+                  "version": "Long Range AWD",
+                  "fuel": "electric",
+                  "gearbox": "auto",
+                  "category": "saloon",
+                  "color": "white",
+                  "door": "fourfive"
+                }
+              ],
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/truck.json"
+            }
+          ]
+        },
+        "valid": false
+      }
+    ]
+  },
+  {
+    "description": "dealer cardinality",
+    "tests": [
+      {
+        "description": "a dealer with 1 row is valid",
+        "data": {
+          "$schema": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json",
+          "resources": [
+            {
+              "name": "dealer",
+              "data": [
+                {
+                  "title": "Downtown Auto Gallery",
+                  "country": "United States",
+                  "region": "California",
+                  "city": "Los Angeles",
+                  "address": "123 Main Street",
+                  "url": "https://www.downtownauto.com"
+                }
+              ],
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/dealer.json"
+            }
+          ]
+        },
+        "valid": true
+      },
+      {
+        "description": "a dealer with 2 rows is invalid",
+        "data": {
+          "$schema": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json",
+          "resources": [
+            {
+              "name": "dealer",
+              "data": [
+                {
+                  "title": "Downtown Auto Gallery",
+                  "country": "United States",
+                  "region": "California",
+                  "city": "Los Angeles",
+                  "address": "123 Main Street",
+                  "url": "https://www.downtownauto.com"
+                },
+                {
+                  "title": "Downtown Auto Gallery",
+                  "country": "United States",
+                  "region": "California",
+                  "city": "Los Angeles",
+                  "address": "123 Main Street",
+                  "url": "https://www.uptownauto.com"
+                }
+              ],
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/dealer.json"
+            }
+          ]
+        },
+        "valid": false
+      },
+      {
+        "description": "a dealer with no rows is invalid",
+        "data": {
+          "$schema": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json",
+          "resources": [
+            {
+              "name": "dealer",
+              "data": [],
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/dealer.json"
+            }
+          ]
+        },
+        "valid": false
+      }
+    ]
+  },
+  {
+    "description": "resource data",
+    "tests": [
+      {
+        "description": "car with several rows is valid",
+        "data": {
+          "$schema": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json",
+          "resources": [
+            {
+              "name": "car",
+              "data": [
+                {
+                  "title": "2023 Tesla Model 3 Long Range",
+                  "url": "https://example.com/cars/tesla-model-3-2023",
+                  "price": 45990,
+                  "currency": "EUR",
+                  "mileage": 15000,
+                  "brand": "Tesla",
+                  "model": "Model 3",
+                  "version": "Long Range AWD",
+                  "fuel": "electric",
+                  "gearbox": "auto",
+                  "category": "saloon",
+                  "color": "white",
+                  "door": "fourfive"
+                },
+                {
+                  "title": "2023 Tesla Model 3 Long Range",
+                  "url": "https://example.com/cars/tesla-model-y-2024",
+                  "price": 45990,
+                  "currency": "EUR",
+                  "mileage": 15000,
+                  "brand": "Tesla",
+                  "model": "Model 3",
+                  "version": "Long Range AWD",
+                  "fuel": "electric",
+                  "gearbox": "auto",
+                  "category": "saloon",
+                  "color": "white",
+                  "door": "fourfive"
+                }
+              ],
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/car.json"
+            }
+          ]
+        },
+        "valid": true
+      },
+      {
+        "description": "facility with several rows is valid",
+        "data": {
+          "$schema": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json",
+          "resources": [
+            {
+              "name": "facility",
+              "data": [
+                {
+                  "id": "facility-downtown-123",
+                  "type": "showroom",
+                  "title": "Downtown Auto Gallery",
+                  "country": "United States",
+                  "region": "California",
+                  "city": "Los Angeles",
+                  "address": "123 Main Street"
+                },
+                {
+                  "id": "facility-uptown-456",
+                  "type": "service",
+                  "title": "Downtown Auto Gallery",
+                  "country": "United States",
+                  "region": "California",
+                  "city": "Los Angeles",
+                  "address": "123 Main Street"
+                }
+              ],
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/facility.json"
+            }
+          ]
+        },
+        "valid": true
+      },
+      {
+        "description": "a non-object row is invalid",
+        "data": {
+          "$schema": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json",
+          "resources": [
+            {
+              "name": "car",
+              "data": [1],
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/car.json"
+            }
+          ]
+        },
+        "valid": false
+      },
+      {
+        "description": "car with no rows is invalid",
+        "data": {
+          "$schema": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json",
+          "resources": [
+            {
+              "name": "car",
+              "data": [],
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/car.json"
+            }
+          ]
+        },
+        "valid": false
+      },
+      {
+        "description": "facility with no rows is invalid",
+        "data": {
+          "$schema": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json",
+          "resources": [
+            {
+              "name": "facility",
+              "data": [],
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/facility.json"
+            }
+          ]
+        },
+        "valid": false
+      },
+      {
+        "description": "a resource without data is invalid",
+        "data": {
+          "$schema": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json",
+          "resources": [
+            {
+              "name": "car",
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/car.json"
+            }
+          ]
+        },
+        "valid": false
+      },
+      {
+        "description": "a resource with a data path is invalid",
+        "data": {
+          "$schema": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json",
+          "resources": [
+            {
+              "name": "car",
+              "data": "cars.csv",
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/car.json"
+            }
+          ]
+        },
+        "valid": false
+      },
+      {
+        "description": "a resource without tableSchema is invalid",
+        "data": {
+          "$schema": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json",
+          "resources": [
+            {
+              "name": "car",
+              "data": [
+                {
+                  "title": "2023 Tesla Model 3 Long Range",
+                  "url": "https://example.com/cars/tesla-model-3-2023",
+                  "price": 45990,
+                  "currency": "EUR",
+                  "mileage": 15000,
+                  "brand": "Tesla",
+                  "model": "Model 3",
+                  "version": "Long Range AWD",
+                  "fuel": "electric",
+                  "gearbox": "auto",
+                  "category": "saloon",
+                  "color": "white",
+                  "door": "fourfive"
+                }
+              ]
+            }
+          ]
+        },
+        "valid": false
+      },
+      {
+        "description": "a resource without name is invalid",
+        "data": {
+          "$schema": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json",
+          "resources": [
+            {
+              "data": [
+                {
+                  "title": "2023 Tesla Model 3 Long Range",
+                  "url": "https://example.com/cars/tesla-model-3-2023",
+                  "price": 45990,
+                  "currency": "EUR",
+                  "mileage": 15000,
+                  "brand": "Tesla",
+                  "model": "Model 3",
+                  "version": "Long Range AWD",
+                  "fuel": "electric",
+                  "gearbox": "auto",
+                  "category": "saloon",
+                  "color": "white",
+                  "door": "fourfive"
+                }
+              ],
+              "tableSchema": "https://datisthq.github.io/cardealer/schemas/{version}/car.json"
+            }
+          ]
+        },
+        "valid": false
+      }
+    ]
+  }
+]

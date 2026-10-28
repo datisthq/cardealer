@@ -10,7 +10,7 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-dependencies = ["pydantic>=2.12", "typing-extensions>=4.15"]
+dependencies = ["fairspec-metadata", "pydantic>=2.12", "typing-extensions>=4.15"]
 slug = "cardealer"
 title = "Fairspec Cardealer"
 
@@ -25,3 +25,25 @@ repository = "https://github.com/datisthq/cardealer"
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+
+[dependency-groups]
+dev = ["pytest>=9.0", "ruff>=0.15", "ty>=0.0.15"]
+
+[tool.uv.sources]
+fairspec-metadata = { path = "../../fairspec/python/metadata", editable = true }
+
+[tool.pytest.ini_options]
+addopts = "--import-mode=importlib"
+python_files = ["*_unit.py"]
+filterwarnings = ["error::UserWarning"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["cardealer"]
+
+# Subclasses narrow fairspec base fields to literals, which is the twin's purpose
+[[tool.ty.overrides]]
+include = ["cardealer/models/resource.py", "cardealer/models/dataset.py"]
+
+[tool.ty.overrides.rules]
+invalid-mutable-override = "ignore"
+invalid-attribute-override = "ignore"

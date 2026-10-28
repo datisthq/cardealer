@@ -15,7 +15,7 @@ Fairspec Cardealer solves these problems by providing a **standardized, validate
 
 ## Structure of a Fairspec Cardealer File
 
-A Fairspec Cardealer file is a JSON document that follows the Fairspec specification. The file contains metadata about the package and one or more data resources describing the dealer, its showrooms, and its cars.
+A Fairspec Cardealer file is a JSON document that follows the Fairspec specification. The file contains metadata about the package and one or more data resources describing the dealer, its facilities, and its cars.
 
 ### Basic Structure
 
@@ -25,17 +25,17 @@ A Fairspec Cardealer file is a JSON document that follows the Fairspec specifica
   "resources": [
     {
       "name": "car",
-      "schema": "https://datisthq.github.io/cardealer/schemas/<version>/car.json",
+      "tableSchema": "https://datisthq.github.io/cardealer/schemas/<version>/car.json",
       "data": [{...}, {...}, {...}]
     },
     {
       "name": "dealer",
-      "schema": "https://datisthq.github.io/cardealer/schemas/<version>/dealer.json",
+      "tableSchema": "https://datisthq.github.io/cardealer/schemas/<version>/dealer.json",
       "data": [{...}]
     },
     {
-      "name": "showroom",
-      "schema": "https://datisthq.github.io/cardealer/schemas/<version>/showroom.json",
+      "name": "facility",
+      "tableSchema": "https://datisthq.github.io/cardealer/schemas/<version>/facility.json",
       "data": [{...}, {...}]
     }
   ]
@@ -48,20 +48,20 @@ A Fairspec Cardealer file is a JSON document that follows the Fairspec specifica
 2. **Resources**: An array containing 1-3 resources:
    - **dealer** (required): Information about the car dealership (exactly 1 item)
    - **car** (optional): Array of car listings offered by the dealer
-   - **showroom** (optional): Array of physical showroom locations
+   - **facility** (optional): Array of physical dealer facilities, each with a `type` (`showroom`, `service`, `warehouse`, `delivery` or `office`)
 
 Each resource includes:
 
-- **name**: The resource type identifier (`"dealer"`, `"car"`, or `"showroom"`)
-- **schema**: URL pointing to the JSON schema that validates the data structure
+- **name**: The resource type identifier (`"dealer"`, `"car"`, or `"facility"`)
+- **tableSchema**: URL pointing to the JSON schema that validates the data structure
 - **data**: An array of data items conforming to the schema
 
 ### Data Relationships
 
 The resources are connected through foreign keys:
 
-- Cars can reference a specific **showroom** via `showroomId`
-- If no `showroomId` is provided, the car is assumed to be at the dealer's main address
-- Each showroom belongs to a dealer
+- Cars can reference a specific **facility** via `facilityId`
+- If no `facilityId` is provided, the car is assumed to be at the dealer's main address
+- Each facility belongs to a dealer
 
 This structure allows flexible representation of dealerships with single or multiple locations while maintaining data integrity through schema validation.

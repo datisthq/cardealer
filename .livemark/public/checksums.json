@@ -1,0 +1,32 @@
+{
+  "0.1.0": {
+    "profiles/dataset.json": "ffcf086921359728e54d88e28b9d8813a64c40fe04404e2cd7b7f22cbcca0372",
+    "schemas/car.json": "e70cea1e011216651a3d0f85c9aa4343bd8a9da6a198a53241b3e08c670bc450",
+    "schemas/dealer.json": "79dc398cd354a26d42d85deba026b94d2f6ebda9481e29af915915de75bd5723",
+    "schemas/showroom.json": "f552c3b1bda5e1620320868b10d30aeb49c178d84196a99bb70492dd733c5b42"
+  },
+  "0.2.0": {
+    "profiles/dataset.json": "f677a0433d72dbea5be3bf3b8ba7f6ebd3031ad44519ef84223ef5dc095407c4",
+    "schemas/car.json": "7fcad5d941373edbf938370d986233b36161b8176d3461daddeaf72c9084cf2d",
+    "schemas/dealer.json": "4af3369abdf0b5374e9e6d5bfb32fd1c159ada5b53d93e0da0a8aa5d75d65368",
+    "schemas/showroom.json": "fd809ae23223b2e35176b4c53818290cc02989452c722d88c3f1cbea3eb4a99f"
+  },
+  "0.2.1": {
+    "profiles/dataset.json": "a14f8df7197168acb5d136f7b6f49df7ff4944a845cceea2c4cc751eade9e1ff",
+    "schemas/car.json": "25abf3484b05afc879b5e1267c9bc25c0deea132e03650120dd3d10e0235c252",
+    "schemas/dealer.json": "4af3369abdf0b5374e9e6d5bfb32fd1c159ada5b53d93e0da0a8aa5d75d65368",
+    "schemas/showroom.json": "fd809ae23223b2e35176b4c53818290cc02989452c722d88c3f1cbea3eb4a99f"
+  },
+  "0.3.0": {
+    "profiles/dataset.json": "4eac6ff4bf6ad71783082117a8028f93db260993d66dfc3fe4a2c09c0db9dcb8",
+    "schemas/car.json": "5197ecdd2a2c8e2a450eb9116d396abe0e913515e18f0ed441993b577b893617",
+    "schemas/dealer.json": "18b398de2f88557e964dfa3d756010ec3b7ce3589d7cdcee72e80538d381b087",
+    "schemas/showroom.json": "48365194e62c4c7d873c0c44c41df6acf35ca08245d6d02d97d475abd94e78aa"
+  },
+  "0.4.0": {
+    "profiles/dataset.json": "fd4024943281cbb0c1a5371265cfe32321aa0ff194843c6229b1b578b5b52934",
+    "schemas/car.json": "5dcf3fbfe81342bd25bc7adb6818ad8135e03ec3e6b58f718a25fb46f3bca7f4",
+    "schemas/dealer.json": "e45898f4fb69777c8a3c816a26c03886408810d4cf28f52369b9bb22a602539e",
+    "schemas/showroom.json": "ee495463d46c59ff640d1b2fdbdcff4c8ccdc4cefdc55ced3fa49e5ec2e4dcfb"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fairspec Cardealer Profile",
+  "allOf": [
+    { "$ref": "https://fairspec.org/profiles/0.6.1/dataset.json" },
+    { "$ref": "#/$defs/Dataset" }
+  ],
+  "$defs": {
+    "Dataset": {
+      "type": "object",
+      "required": ["$schema", "resources"],
+      "properties": {
+        "$schema": {
+          "const": "https://datisthq.github.io/cardealer/profiles/{version}/dataset.json"
+        },
+        "resources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/Resource"
+          }
+        }
+      }
+    },
+    "Resource": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/CarResource"
+        },
+        {
+          "$ref": "#/$defs/DealerResource"
+        },
+        {
+          "$ref": "#/$defs/FacilityResource"
+        }
+      ]
+    },
+    "CarResource": {
+      "type": "object",
+      "required": ["name", "data", "tableSchema"],
+      "properties": {
+        "name": {
+          "const": "car"
+        },
+        "data": {
+          "type": "array",
+          "description": "Data items have to conform to the Car table schema",
+          "minItems": 1,
+          "items": {
+            "type": "object"
+          }
+        },
+        "tableSchema": {
+          "const": "https://datisthq.github.io/cardealer/schemas/{version}/car.json"
+        }
+      }
+    },
+    "DealerResource": {
+      "type": "object",
+      "required": ["name", "data", "tableSchema"],
+      "properties": {
+        "name": {
+          "const": "dealer"
+        },
+        "data": {
+          "type": "array",
+          "description": "Data items have to conform to the Dealer table schema",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object"
+          }
+        },
+        "tableSchema": {
+          "const": "https://datisthq.github.io/cardealer/schemas/{version}/dealer.json"
+        }
+      }
+    },
+    "FacilityResource": {
+      "type": "object",
+      "required": ["name", "data", "tableSchema"],
+      "properties": {
+        "name": {
+          "const": "facility"
+        },
+        "data": {
+          "type": "array",
+          "description": "Data items have to conform to the Facility table schema",
+          "minItems": 1,
+          "items": {
+            "type": "object"
+          }
+        },
+        "tableSchema": {
+          "const": "https://datisthq.github.io/cardealer/schemas/{version}/facility.json"
+        }
+      }
+    }
+  }
+}

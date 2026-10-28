@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://datisthq.github.io/cardealer/conformance/test-schema.json",
+  "title": "Cardealer conformance test file",
+  "description": "An array of groups. A group names what it covers; each of its tests gives the data and whether the model accepts it. The layout follows JSON-Schema-Test-Suite.",
+  "type": "array",
+  "minItems": 1,
+  "items": { "$ref": "#/$defs/group" },
+  "$defs": {
+    "group": {
+      "type": "object",
+      "required": ["description", "tests"],
+      "properties": {
+        "description": {
+          "description": "What the group covers; unique within the file",
+          "type": "string"
+        },
+        "comment": {
+          "description": "Context for maintainers; never read by a runner",
+          "type": "string"
+        },
+        "specification": {
+          "description": "Links to the spec sections the group exercises",
+          "type": "array",
+          "items": { "type": "string", "format": "uri" }
+        },
+        "tests": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/test" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "test": {
+      "type": "object",
+      "required": ["description", "data", "valid"],
+      "properties": {
+        "description": {
+          "description": "What the test checks; unique within the group",
+          "type": "string"
+        },
+        "comment": {
+          "description": "Context for maintainers; never read by a runner",
+          "type": "string"
+        },
+        "data": {
+          "description": "The value the model parses: a row for a table model, a dataset descriptor for the dataset model. Cardealer URLs carry the literal {version}, which a runner replaces with its VERSION first"
+        },
+        "valid": {
+          "description": "Whether the model accepts the data",
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

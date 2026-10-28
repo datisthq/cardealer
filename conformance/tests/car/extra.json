@@ -1,0 +1,69 @@
+[
+  {
+    "description": "unknown columns",
+    "tests": [
+      {
+        "description": "a car with an unknown column is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "white",
+          "door": "fourfive",
+          "condition": "used"
+        },
+        "valid": true
+      },
+      {
+        "description": "a car with showroomId and no facilityId is valid",
+        "comment": "showroomId is the pre-facility key; unknown keys are allowed, so old rows still parse",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "white",
+          "door": "fourfive",
+          "showroomId": "showroom-downtown-123"
+        },
+        "valid": true
+      },
+      {
+        "description": "a car with both showroomId and facilityId is valid",
+        "data": {
+          "title": "2023 Tesla Model 3 Long Range",
+          "url": "https://example.com/cars/tesla-model-3-2023",
+          "price": 45990,
+          "currency": "EUR",
+          "mileage": 15000,
+          "brand": "Tesla",
+          "model": "Model 3",
+          "version": "Long Range AWD",
+          "fuel": "electric",
+          "gearbox": "auto",
+          "category": "saloon",
+          "color": "white",
+          "door": "fourfive",
+          "showroomId": "showroom-downtown-123",
+          "facilityId": "facility-downtown-123"
+        },
+        "valid": true
+      }
+    ]
+  }
+]

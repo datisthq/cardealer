@@ -1,0 +1,11 @@
+{
+  "name": "@cardealer/rust",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "cargo build --release",
+    "test": "pnpm type && pnpm test:unit",
+    "test:unit": "cargo test",
+    "type": "cargo check --all-targets"
+  }
+}

@@ -9,11 +9,16 @@
   "type": "module",
   "scripts": {
     "build": "tsgo",
-    "type": "tsgo --noEmit"
+    "type": "tsgo --noEmit && tsgo --noEmit -p tsconfig.test.json",
+    "test": "pnpm type && pnpm test:unit",
+    "test:unit": "vp test"
   },
   "dependencies": {
-    "@fairspec/metadata": "^0.2.2",
-    "zod": "^4.3.5"
+    "@fairspec/metadata": "link:../../fairspec/typescript/metadata",
+    "zod": "^4.4.1"
+  },
+  "devDependencies": {
+    "vite-plus": "catalog:"
   },
   "slug": "cardealer",
   "title": "Fairspec Cardealer"
