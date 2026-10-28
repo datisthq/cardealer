@@ -13,11 +13,11 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.625 0.18 254);
+  --primary: oklch(54.6% 0.245 262.881);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.92 0.04 250);
+  --secondary: oklch(76.8% 0.233 130.85);
   --secondary-foreground: oklch(0.205 0 0);
-  --banner: oklch(0.92 0.04 250);
+  --banner: oklch(93.8% 0.127 124.321);
   --banner-foreground: oklch(0.205 0 0);
   --muted: oklch(0.985 0 0);
   --muted-foreground: oklch(0.5 0 0);
@@ -63,10 +63,10 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.72 0.16 254);
-  --primary-foreground: oklch(0.145 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.623 0.214 259.815);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(84.1% 0.238 128.85);
+  --secondary-foreground: oklch(0.205 0 0);
   --banner: oklch(0.269 0 0);
   --banner-foreground: oklch(0.985 0 0);
   --muted: oklch(0.205 0 0);
@@ -204,5 +204,32 @@
   [data-slot="sidebar-content"]:hover::-webkit-scrollbar-thumb,
   [data-slot="sidebar-content"]:focus-within::-webkit-scrollbar-thumb {
     background: color-mix(in oklch, var(--sidebar-foreground) 20%, transparent);
+  }
+
+  .prose table:not([data-slot]) {
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .prose table:not([data-slot]) :is(th, td) {
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .prose table:not([data-slot]) :is(th, td):not(:last-child) {
+    border-right: 1px solid var(--border);
+  }
+
+  .prose table:not([data-slot]) tr:not(:last-child) :is(th, td) {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .prose table:not([data-slot]) th {
+    background: var(--muted);
+    font-weight: 600;
   }
 }

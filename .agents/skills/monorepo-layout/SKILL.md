@@ -22,6 +22,12 @@ Root-only: `.scripts/` (publisher `@publish.ts`, `-shared/`, `-test/*.unit.ts` r
 the page path comes from each file's `path:` frontmatter. Livemark 0.29.3 has no redirects, so a
 removed page 404s.
 
+The site mimics fairspec.org: `.livemark/styles/general.css` carries Fairspec's colour tokens and
+`.livemark/components/Landing.tsx` is Fairspec's landing kit (hero carousel, sections, CTA),
+trimmed to code-only slides. Port a Fairspec look change from `../fairspec/.livemark/` rather
+than restyling here. Landing code samples are plain strings in `components/Samples.tsx`,
+highlighted by its `Code` tokenizer; use `latest` profile and schema URLs there.
+
 ## Commands
 
 Root: `pnpm type`, `pnpm test:unit` (root `vp test` plus every section), `pnpm build`,

@@ -1,18 +1,50 @@
 import { Link, createFileRoute } from "@tanstack/react-router"
 import {
-  ArrowRight,
   BookOpen,
+  Building2,
+  Code,
+  CodeXml,
+  Cog,
   FileJson2,
   GitBranch,
   Github,
+  ListChecks,
   Rocket,
-  Sparkles,
-  Wand2,
+  ScrollText,
+  Waypoints,
 } from "lucide-react"
-import type { ComponentType, ReactNode, SVGProps } from "react"
-import { buttonVariants } from "livemark/elements/button"
-import { useInView } from "livemark/hooks/in-view"
-import { cn } from "cn"
+import type { ReactNode } from "react"
+import { BackToTop } from "livemark/components/BackToTop"
+import { Banner } from "livemark/components/Banner"
+import { Header } from "livemark/components/Header"
+import {
+  Datist,
+  FeatureGrid,
+  FinalCta,
+  Hero,
+  Highlight,
+  LandingSection,
+  type Point,
+  ShowcaseSection,
+  type Slide,
+  SplitSection,
+  WindowCard,
+  actionClass,
+  textLinkClass,
+  tk,
+} from "../components/Landing.tsx"
+import {
+  Code as CodeLines,
+  WindowCode,
+  carSample,
+  consumeSample,
+  datasetSample,
+  dealerSample,
+  facilitySample,
+  profileSample,
+  publishSample,
+  tableSchemaSample,
+} from "../components/Samples.tsx"
 
 // @ts-ignore
 export const Route = createFileRoute("/")({
@@ -21,419 +53,273 @@ export const Route = createFileRoute("/")({
 
 function Landing() {
   return (
-    <div className="flex flex-col">
-      <Hero />
-      <Features />
-      <Showcase />
-      <FinalCta />
-      <Stack />
-    </div>
+    <>
+      <Banner />
+      <Header />
+      <main className="flex flex-col">
+        <Hero
+          eyebrow="Technical preview · MIT License"
+          title={
+            <>
+              Data exchange format for <Highlight>car dealerships</Highlight>
+            </>
+          }
+          lede={
+            <>
+              Share dealers, facilities and car listings in one JSON file — a{" "}
+              <code className="font-mono text-foreground">Fairspec</code> dataset with
+              typed tables, shipped with TypeScript, Python and Rust libraries.
+            </>
+          }
+          actions={
+            <>
+              <Link
+                to="/$"
+                params={{ _splat: "overview" }}
+                className={actionClass("default")}
+              >
+                <Rocket className="size-4" />
+                Get started
+              </Link>
+              <a
+                href="https://github.com/datisthq/cardealer"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={actionClass("outline")}
+              >
+                <Github className="size-4" />
+                View source
+              </a>
+            </>
+          }
+          slides={slides}
+        />
+        <SplitSection
+          title="A simple format for car listings"
+          lede="One file a dealership publishes and any marketplace or aggregator can read."
+          points={standardPoints}
+          visual={
+            <WindowCard label="dataset.json">
+              <WindowCode code={datasetSample} />
+            </WindowCard>
+          }
+          links={
+            <>
+              <Link
+                to="/$"
+                params={{ _splat: "specification/data" }}
+                className={textLinkClass}
+              >
+                Read the specification →
+              </Link>
+              <Link
+                to="/$"
+                params={{ _splat: "overview/examples" }}
+                className={textLinkClass}
+              >
+                Browse the examples →
+              </Link>
+            </>
+          }
+        />
+        <LandingSection
+          title="Libraries for every stack"
+          lede="Three hand-written twins on the Fairspec base libraries, kept equal by one conformance suite."
+        >
+          <FeatureGrid features={tools} />
+        </LandingSection>
+        <ShowcaseSection
+          title="Write in one language. Read in another."
+          lede="A dataset published from TypeScript validates the same way in Python and Rust."
+          left={{ label: "publish.ts", content: <WindowCode code={publishSample} /> }}
+          right={{ label: "consume.py", content: <WindowCode code={consumeSample} /> }}
+        />
+        <FinalCta
+          title={
+            <>
+              Publish your listings.{" "}
+              <span className="text-primary">Start with one JSON file.</span>
+            </>
+          }
+          lede="Read the format, drop in an example, and have your dealer feed shareable in minutes."
+          actions={
+            <>
+              <Link
+                to="/$"
+                params={{ _splat: "overview" }}
+                className={actionClass("default")}
+              >
+                <BookOpen className="size-4" />
+                Read the docs
+              </Link>
+              <Link
+                to="/$"
+                params={{ _splat: "overview/examples" }}
+                className={actionClass("ghost")}
+              >
+                <FileJson2 className="size-4" />
+                Browse examples
+              </Link>
+            </>
+          }
+        />
+        <Datist />
+      </main>
+      <BackToTop />
+    </>
   )
 }
 
 /* ─────────────────────────── Hero ─────────────────────────── */
 
-function Hero() {
-  return (
-    <section className="relative overflow-hidden border-b border-border flex items-center min-h-[calc(100vh-4rem)]">
-      <BackgroundGrid />
-      <div className="relative w-full mx-auto max-w-5xl px-6 py-16 text-center animate-in fade-in-0 slide-in-from-bottom-4 duration-700 ease-out">
-        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs text-muted-foreground mb-6">
-          <Sparkles className="size-3.5 text-primary" />
-          Technical preview
-        </div>
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-foreground">
-          Data exchange format for{" "}
-          <span className="relative inline-block">
-            <span className="relative z-10">car dealerships</span>
-            <span
-              aria-hidden
-              className="absolute left-0 right-0 bottom-1 md:bottom-2 h-3 md:h-4 bg-primary/20 -z-0 rounded"
-            />
-          </span>
-        </h1>
-
-        <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-          Fairspec Cardealer is a data exchange format that helps car dealerships share
-          their car listings — built on top of the Fairspec standard.
-        </p>
-
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <Link
-            to="/overview/"
-            className={cn(
-              buttonVariants({ variant: "default", size: "lg" }),
-              "px-5 no-underline",
-            )}
-          >
-            Get started
-            <ArrowRight className="size-4" />
-          </Link>
-          <a
-            href="https://github.com/datisthq/cardealer"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn(
-              buttonVariants({ variant: "outline", size: "lg" }),
-              "px-5 no-underline",
-            )}
-          >
-            <Github className="size-4" />
-            View on GitHub
-          </a>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function BackgroundGrid() {
-  return (
-    <>
-      <div
-        aria-hidden
-        className="absolute inset-0 [background-image:repeating-linear-gradient(90deg,var(--color-border)_0,var(--color-border)_1px,transparent_1px,transparent_8px)] opacity-25 [mask-image:linear-gradient(to_top,black_10%,transparent_85%)]"
-      />
-      <div
-        aria-hidden
-        className="absolute -bottom-40 -left-40 h-[36rem] w-[36rem] rounded-full bg-primary/30 dark:bg-primary/25 blur-[110px] pointer-events-none"
-      />
-      <div
-        aria-hidden
-        className="absolute -top-32 -right-32 h-[32rem] w-[32rem] rounded-full bg-sky-400/25 dark:bg-sky-500/20 blur-[110px] pointer-events-none"
-      />
-    </>
-  )
-}
-
-/* ─────────────────────────── Features ─────────────────────────── */
-
-interface Feature {
-  icon: ComponentType<SVGProps<SVGSVGElement>>
-  title: string
-  description: string
-}
-
-const features: Feature[] = [
+const slides: Slide[] = [
   {
-    icon: Rocket,
-    title: "Simple",
-    description:
-      "Publish all your car listings in one simple JSON file that any data consumer can read out of the box.",
+    id: "dataset",
+    title: "Dataset",
+    content: <SpecPreview />,
+    source: {
+      eyebrow: "Checked by a profile",
+      file: "$schema",
+      code: (
+        <span className={tk.url}>
+          {"datisthq.github.io/cardealer/\nprofiles/latest/dataset.json"}
+        </span>
+      ),
+    },
   },
   {
+    id: "dealer",
+    title: "Dealer",
+    content: <SlideCode code={dealerSample} />,
+    source: {
+      eyebrow: "Exactly one dealer",
+      file: "schemas/latest/dealer.json",
+      code: <>title · address · phone · url</>,
+    },
+  },
+  {
+    id: "facility",
+    title: "Facility",
+    content: <SlideCode code={facilitySample} />,
+    source: {
+      eyebrow: "Five facility types",
+      file: "schemas/latest/facility.json",
+      code: <>{"showroom · service · warehouse\ndelivery · office"}</>,
+    },
+  },
+  {
+    id: "car",
+    title: "Car",
+    content: <SlideCode code={carSample} />,
+    source: {
+      eyebrow: "Linked by foreign key",
+      file: "schemas/latest/car.json",
+      code: <CodeLines code={`"facilityId": "downtown-sf"`} />,
+    },
+  },
+]
+
+/* ─────────────────────────── Standard ─────────────────────────── */
+
+const standardPoints: Point[] = [
+  {
     icon: FileJson2,
-    title: "Complete",
+    title: "One file",
     description:
-      "Covers cars, facilities, and dealer details — including foreign keys between resources for multi-location dealerships.",
+      "Dealer, facilities and cars travel together in a single JSON dataset any consumer can read out of the box.",
+  },
+  {
+    icon: Building2,
+    title: "Multi-location",
+    description:
+      "Showrooms, service centers, warehouses, delivery points and offices, with cars linked to the facility that holds them.",
   },
   {
     icon: BookOpen,
-    title: "Standard",
+    title: "Built on Fairspec",
     description:
-      "Built on the widely-used Fairspec / Data Package standard, making it compatible with the wider ecosystem.",
-  },
-  {
-    icon: Wand2,
-    title: "Proven",
-    description:
-      "Hand-written TypeScript, Python and Rust libraries on Fairspec's own, proven against one conformance suite.",
+      "Every cardealer dataset is also a valid Fairspec dataset, validated by JSON Schema Draft 2020-12.",
   },
   {
     icon: GitBranch,
     title: "Versioned",
     description:
-      "Semantic versioning, GitHub releases, and an auto-published changelog wired up out of the box.",
-  },
-  {
-    icon: Sparkles,
-    title: "Documented",
-    description:
-      "Specification, table schemas, and examples render to a Livemark documentation site that ships with the format.",
+      "Published profiles and schemas never change; each release gets its own immutable URL.",
   },
 ]
 
-function Features() {
+/* ─────────────────────────── Tools ─────────────────────────── */
+
+const tools: Point[] = [
+  {
+    icon: CodeXml,
+    title: "TypeScript",
+    description: "Zod models extending @fairspec/metadata to parse and publish datasets.",
+    link: { to: "/$", splat: "overview/software" },
+  },
+  {
+    icon: Code,
+    title: "Python",
+    description:
+      "Pydantic models subclassing fairspec-metadata to validate and write datasets.",
+    link: { to: "/$", splat: "overview/software" },
+  },
+  {
+    icon: Cog,
+    title: "Rust",
+    description: "Serde models parsing through fairspec-metadata to read datasets.",
+    link: { to: "/$", splat: "overview/software" },
+  },
+  {
+    icon: ListChecks,
+    title: "Conformance",
+    description:
+      "Language-neutral JSON cases every library runs, so the three never drift apart.",
+  },
+  {
+    icon: Waypoints,
+    title: "Profiles and schemas",
+    description:
+      "The dataset profile and the dealer, facility and car table schemas, served from this site.",
+    link: { to: "/$", splat: "specification/data" },
+  },
+  {
+    icon: ScrollText,
+    title: "Specification",
+    description: "Normative prose for the metadata and every table, field by field.",
+    link: { to: "/$", splat: "specification/metadata" },
+  },
+]
+
+/* ─────────────────────────── Samples ─────────────────────────── */
+
+function SlideCode(props: { code: string }) {
   return (
-    <section className="border-b border-border">
-      <div className="mx-auto max-w-6xl px-6 py-24">
-        <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              Designed for car dealers
-            </h2>
-            <p className="mt-4 text-muted-foreground text-lg">
-              A pragmatic format that travels well across tools and teams.
-            </p>
-          </div>
-        </Reveal>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {features.map((f, i) => (
-            <Reveal key={f.title} delayMs={i * 60}>
-              <FeatureCard {...f} />
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
+    <WindowCode
+      code={props.code}
+      className="px-3 py-4 text-[10.5px] sm:p-5 sm:text-sm xl:px-8 xl:py-6"
+    />
   )
 }
 
-function FeatureCard({ icon: Icon, title, description }: Feature) {
+function SpecPreview() {
   return (
-    <div className="h-full group relative rounded-xl border border-border bg-card p-6 transition-all duration-200 hover:border-primary/40 hover:-translate-y-0.5 hover:shadow-lg">
-      <div className="inline-flex items-center justify-center size-10 rounded-lg bg-primary/10 text-primary mb-4 group-hover:bg-primary/15 transition-colors">
-        <Icon className="size-5" />
-      </div>
-      <h3 className="text-lg font-semibold text-foreground">{title}</h3>
-      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{description}</p>
+    <div className="space-y-3 px-3 py-4 font-mono text-[10.5px] leading-relaxed sm:p-5 sm:text-sm xl:p-8 xl:text-base">
+      <SpecLabel>A Fairspec dataset with three resources</SpecLabel>
+      <pre className="overflow-x-auto">
+        <CodeLines code={profileSample} />
+      </pre>
+      <SpecLabel>Each resource is a typed table</SpecLabel>
+      <pre className="overflow-x-auto">
+        <CodeLines code={tableSchemaSample} />
+      </pre>
     </div>
   )
 }
 
-/* ─────────────────────────── Showcase ─────────────────────────── */
-
-const tk = {
-  punct: "text-[#7c7f93] dark:text-[#9399b2]",
-  key: "text-[#1e66f5] dark:text-[#89b4fa]",
-  str: "text-[#40a02b] dark:text-[#a6e3a1]",
-  num: "text-[#fe640b] dark:text-[#fab387]",
-  url: "text-[#179299] dark:text-[#94e2d5]",
-  body: "text-[#4c4f69] dark:text-[#cdd6f4]",
-}
-
-function CardealerSample() {
+function SpecLabel(props: { children: ReactNode }) {
   return (
-    <pre className="p-5 text-sm leading-relaxed font-mono overflow-x-auto">
-      <code className={tk.body}>
-        <span className={tk.punct}>{"{"}</span>
-        {"\n  "}
-        <span className={tk.key}>"$schema"</span>
-        <span className={tk.punct}>:</span>{" "}
-        <span className={tk.url}>
-          "https://datisthq.github.io/cardealer/profiles/0.4.0/dataset.json"
-        </span>
-        <span className={tk.punct}>,</span>
-        {"\n  "}
-        <span className={tk.key}>"resources"</span>
-        <span className={tk.punct}>:</span> <span className={tk.punct}>[</span>
-        {"\n    "}
-        <span className={tk.punct}>{"{"}</span>
-        {"\n      "}
-        <span className={tk.key}>"name"</span>
-        <span className={tk.punct}>:</span> <span className={tk.str}>"dealer"</span>
-        <span className={tk.punct}>,</span>
-        {"\n      "}
-        <span className={tk.key}>"schema"</span>
-        <span className={tk.punct}>:</span>{" "}
-        <span className={tk.url}>
-          "https://datisthq.github.io/cardealer/schemas/0.4.0/dealer.json"
-        </span>
-        <span className={tk.punct}>,</span>
-        {"\n      "}
-        <span className={tk.key}>"data"</span>
-        <span className={tk.punct}>:</span> <span className={tk.punct}>[</span>
-        {"\n        "}
-        <span className={tk.punct}>{"{"}</span>
-        {"\n          "}
-        <span className={tk.key}>"title"</span>
-        <span className={tk.punct}>:</span>{" "}
-        <span className={tk.str}>"Premium Auto Sales"</span>
-        <span className={tk.punct}>,</span>
-        {"\n          "}
-        <span className={tk.key}>"city"</span>
-        <span className={tk.punct}>:</span> <span className={tk.str}>"Los Angeles"</span>
-        <span className={tk.punct}>,</span>
-        {"\n          "}
-        <span className={tk.key}>"url"</span>
-        <span className={tk.punct}>:</span>{" "}
-        <span className={tk.str}>"https://premiumauto.example"</span>
-        {"\n        "}
-        <span className={tk.punct}>{"}"}</span>
-        {"\n      "}
-        <span className={tk.punct}>]</span>
-        {"\n    "}
-        <span className={tk.punct}>{"},"}</span>
-        {"\n    "}
-        <span className={tk.punct}>{"{"}</span>
-        {"\n      "}
-        <span className={tk.key}>"name"</span>
-        <span className={tk.punct}>:</span> <span className={tk.str}>"car"</span>
-        <span className={tk.punct}>,</span>
-        {"\n      "}
-        <span className={tk.key}>"schema"</span>
-        <span className={tk.punct}>:</span>{" "}
-        <span className={tk.url}>
-          "https://datisthq.github.io/cardealer/schemas/0.4.0/car.json"
-        </span>
-        <span className={tk.punct}>,</span>
-        {"\n      "}
-        <span className={tk.key}>"data"</span>
-        <span className={tk.punct}>:</span> <span className={tk.punct}>[</span>
-        {"\n        "}
-        <span className={tk.punct}>{"{"}</span>
-        {"\n          "}
-        <span className={tk.key}>"url"</span>
-        <span className={tk.punct}>:</span>{" "}
-        <span className={tk.str}>"https://premiumauto.example/cars/m3"</span>
-        <span className={tk.punct}>,</span>
-        {"\n          "}
-        <span className={tk.key}>"brand"</span>
-        <span className={tk.punct}>:</span> <span className={tk.str}>"BMW"</span>
-        <span className={tk.punct}>,</span>
-        {"\n          "}
-        <span className={tk.key}>"model"</span>
-        <span className={tk.punct}>:</span>{" "}
-        <span className={tk.str}>"M3 Competition"</span>
-        <span className={tk.punct}>,</span>
-        {"\n          "}
-        <span className={tk.key}>"year"</span>
-        <span className={tk.punct}>:</span> <span className={tk.num}>2024</span>
-        <span className={tk.punct}>,</span>
-        {"\n          "}
-        <span className={tk.key}>"price"</span>
-        <span className={tk.punct}>:</span> <span className={tk.num}>76000</span>
-        {"\n        "}
-        <span className={tk.punct}>{"}"}</span>
-        {"\n      "}
-        <span className={tk.punct}>]</span>
-        {"\n    "}
-        <span className={tk.punct}>{"}"}</span>
-        {"\n  "}
-        <span className={tk.punct}>]</span>
-        {"\n"}
-        <span className={tk.punct}>{"}"}</span>
-      </code>
-    </pre>
-  )
-}
-
-function Showcase() {
-  return (
-    <section className="border-b border-border bg-primary/5">
-      <div className="mx-auto max-w-6xl px-6 py-24">
-        <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              One JSON file. Every car listing.
-            </h2>
-            <p className="mt-4 text-muted-foreground text-lg">
-              Describe your dealer, your facilities, and your cars in a single file —
-              validated against shared schemas.
-            </p>
-          </div>
-        </Reveal>
-        <Reveal>
-          <div className="rounded-xl border border-primary/20 bg-card overflow-hidden max-w-4xl mx-auto">
-            <div className="flex items-center gap-2 border-b border-primary/20 px-4 py-2 bg-muted/50">
-              <div className="size-2.5 rounded-full bg-red-400/60" />
-              <div className="size-2.5 rounded-full bg-yellow-400/60" />
-              <div className="size-2.5 rounded-full bg-green-400/60" />
-              <span className="ml-2 text-xs font-mono text-muted-foreground">
-                dataset.json
-              </span>
-            </div>
-            <CardealerSample />
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  )
-}
-
-/* ─────────────────────────── Final CTA ─────────────────────────── */
-
-function FinalCta() {
-  return (
-    <section className="relative overflow-hidden">
-      <div className="relative mx-auto max-w-3xl px-6 py-24 text-center">
-        <Reveal>
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
-            Ready to publish your listings?{" "}
-            <span className="text-primary">Start with one JSON file.</span>
-          </h2>
-          <p className="mt-6 text-lg text-muted-foreground">
-            Read the format, drop in an example, and have your dealer feed shareable in
-            minutes.
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link
-              to="/overview/"
-              className={cn(
-                buttonVariants({ variant: "default", size: "lg" }),
-                "px-5 no-underline",
-              )}
-            >
-              Read the docs
-              <ArrowRight className="size-4" />
-            </Link>
-            <Link
-              to="/overview/examples/"
-              className={cn(
-                buttonVariants({ variant: "ghost", size: "lg" }),
-                "px-5 no-underline",
-              )}
-            >
-              Browse examples
-            </Link>
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  )
-}
-
-/* ─────────────────────────── Stack ─────────────────────────── */
-
-const stackItems = [
-  "Fairspec",
-  "Data Package",
-  "JSON Schema 2020-12",
-  "Python",
-  "TypeScript",
-  "Rust",
-  "Livemark",
-]
-
-function Stack() {
-  return (
-    <section className="border-t border-border bg-muted/30">
-      <div className="mx-auto max-w-5xl px-6 py-16">
-        <Reveal>
-          <div className="flex flex-col items-center gap-6 text-center">
-            <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-              Built on open, well-adopted standards
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-              {stackItems.map(item => (
-                <span
-                  key={item}
-                  className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  )
-}
-
-/* ─────────────────────────── Reveal helper ─────────────────────────── */
-
-function Reveal(props: { children: ReactNode; delayMs?: number }) {
-  const { ref, isVisible } = useInView()
-  return (
-    <div
-      ref={ref as (node: HTMLDivElement | null) => void}
-      style={{ transitionDelay: `${props.delayMs ?? 0}ms` }}
-      className={cn(
-        "transition-all duration-700 ease-out",
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
-      )}
-    >
+    <div className="inline-flex items-center rounded-md border border-border bg-muted/60 px-2 py-0.5 text-xs text-muted-foreground">
       {props.children}
     </div>
   )
