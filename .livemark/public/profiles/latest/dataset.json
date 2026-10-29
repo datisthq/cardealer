@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Fairspec Cardealer Profile",
   "allOf": [
-    { "$ref": "https://fairspec.org/profiles/0.3.0/dataset.json" },
+    { "$ref": "https://fairspec.org/profiles/0.6.1/dataset.json" },
     { "$ref": "#/$defs/Dataset" }
   ],
   "$defs": {
@@ -11,7 +11,7 @@
       "required": ["$schema", "resources"],
       "properties": {
         "$schema": {
-          "const": "https://datisthq.github.io/cardealer/profiles/0.4.0/dataset.json"
+          "const": "https://datisthq.github.io/cardealer/profiles/0.5.0/dataset.json"
         },
         "resources": {
           "type": "array",
@@ -31,7 +31,7 @@
           "$ref": "#/$defs/DealerResource"
         },
         {
-          "$ref": "#/$defs/ShowroomResource"
+          "$ref": "#/$defs/FacilityResource"
         }
       ]
     },
@@ -51,7 +51,7 @@
           }
         },
         "tableSchema": {
-          "const": "https://datisthq.github.io/cardealer/schemas/0.4.0/car.json"
+          "const": "https://datisthq.github.io/cardealer/schemas/0.5.0/car.json"
         }
       }
     },
@@ -72,27 +72,27 @@
           }
         },
         "tableSchema": {
-          "const": "https://datisthq.github.io/cardealer/schemas/0.4.0/dealer.json"
+          "const": "https://datisthq.github.io/cardealer/schemas/0.5.0/dealer.json"
         }
       }
     },
-    "ShowroomResource": {
+    "FacilityResource": {
       "type": "object",
       "required": ["name", "data", "tableSchema"],
       "properties": {
         "name": {
-          "const": "showroom"
+          "const": "facility"
         },
         "data": {
           "type": "array",
-          "description": "Data items have to conform to the Showroom table schema",
+          "description": "Data items have to conform to the Facility table schema",
           "minItems": 1,
           "items": {
             "type": "object"
           }
         },
         "tableSchema": {
-          "const": "https://datisthq.github.io/cardealer/schemas/0.4.0/showroom.json"
+          "const": "https://datisthq.github.io/cardealer/schemas/0.5.0/facility.json"
         }
       }
     }

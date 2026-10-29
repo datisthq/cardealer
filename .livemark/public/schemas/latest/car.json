@@ -1,13 +1,13 @@
 {
-  "$schema": "https://fairspec.org/profiles/0.3.0/table-schema.json",
+  "$schema": "https://fairspec.org/profiles/0.6.1/table-schema.json",
   "title": "Car",
   "description": "A table schema describing a car",
   "primaryKey": ["url"],
   "foreignKeys": [
     {
-      "columns": ["showroomId"],
+      "columns": ["facilityId"],
       "reference": {
-        "resource": "showroom",
+        "resource": "facility",
         "columns": ["id"]
       }
     }
@@ -28,10 +28,10 @@
     "door"
   ],
   "properties": {
-    "showroomId": {
+    "facilityId": {
       "type": "string",
-      "description": "Unique identifier for the showroom where the car is located. If not provided the car is considered located at the dealers's main address",
-      "examples": ["showroom-downtown-123"]
+      "description": "Identifier of the facility where the car is located. If not provided the car is considered located at the dealer's main address",
+      "examples": ["facility-downtown-123"]
     },
     "title": {
       "type": "string",

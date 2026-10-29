@@ -1,5 +1,5 @@
 {
-  "$schema": "https://fairspec.org/profiles/0.3.0/table-schema.json",
+  "$schema": "https://fairspec.org/profiles/0.6.1/table-schema.json",
   "title": "Dealer",
   "description": "A table schema describing a car dealer",
   "primaryKey": ["url"],

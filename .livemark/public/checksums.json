@@ -28,5 +28,11 @@
     "schemas/car.json": "5dcf3fbfe81342bd25bc7adb6818ad8135e03ec3e6b58f718a25fb46f3bca7f4",
     "schemas/dealer.json": "e45898f4fb69777c8a3c816a26c03886408810d4cf28f52369b9bb22a602539e",
     "schemas/showroom.json": "ee495463d46c59ff640d1b2fdbdcff4c8ccdc4cefdc55ced3fa49e5ec2e4dcfb"
+  },
+  "0.5.0": {
+    "profiles/dataset.json": "87b4c55e81c4358456b68cc384717f5deadd5be19019170949f85f8374c3f94a",
+    "schemas/car.json": "c7b0fb990e0904a33b41f1e4ce8dd8f2a60cf58e7c5953ab61f8b22af470df82",
+    "schemas/dealer.json": "bb31029171af0570aabbcfbfa35b981429cbbc85e12c1f0564f2f6016e251fb6",
+    "schemas/facility.json": "33517145b8234fc1441f16a9851a07b824a91aec12a774d000a8a405dbefe4e2"
   }
 }
