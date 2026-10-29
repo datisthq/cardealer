@@ -6,9 +6,9 @@ use super::dealer::Dealer;
 use super::facility::Facility;
 use crate::error::Error;
 
-const CAR_SCHEMA: &str = "https://datisthq.github.io/cardealer/schemas/0.4.0/car.json"; /* x-release-please-version */
-const DEALER_SCHEMA: &str = "https://datisthq.github.io/cardealer/schemas/0.4.0/dealer.json"; /* x-release-please-version */
-const FACILITY_SCHEMA: &str = "https://datisthq.github.io/cardealer/schemas/0.4.0/facility.json"; /* x-release-please-version */
+const CAR_SCHEMA: &str = "https://datisthq.github.io/cardealer/schemas/0.5.0/car.json"; /* x-release-please-version */
+const DEALER_SCHEMA: &str = "https://datisthq.github.io/cardealer/schemas/0.5.0/dealer.json"; /* x-release-please-version */
+const FACILITY_SCHEMA: &str = "https://datisthq.github.io/cardealer/schemas/0.5.0/facility.json"; /* x-release-please-version */
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct CarResource {
