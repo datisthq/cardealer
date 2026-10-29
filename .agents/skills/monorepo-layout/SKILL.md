@@ -64,6 +64,10 @@ A new hard-coded version URL must carry the marker AND its file must be listed i
 `{version}` placeholder instead. On the Release PR the workflow runs `pnpm publish:profiles`,
 which writes `.livemark/public/{profiles,schemas}/<v>/`, `latest/` and `checksums.json`.
 Published folders are immutable; `.scripts/-test/profiles.unit.ts` guards them.
+Never merge a Release PR before its `chore: publish the versioned profiles` commit lands: merging
+deletes the branch, the bot's push is rejected and the guard then fails on `main`, so nothing is
+tagged or published. Recover by running `pnpm publish:profiles` on `main` and committing the result;
+release-please still tags the merged PR (label `autorelease: pending`) on the next push.
 
 ## Commit types
 
