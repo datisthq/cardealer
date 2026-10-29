@@ -4,7 +4,7 @@ use serde_json::Value;
 use super::resource::{CardealerResource, ResourceView};
 use crate::error::Error;
 
-const PROFILE: &str = "https://datisthq.github.io/cardealer/profiles/0.4.0/dataset.json"; /* x-release-please-version */
+const PROFILE: &str = "https://datisthq.github.io/cardealer/profiles/0.5.0/dataset.json"; /* x-release-please-version */
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct Dataset {

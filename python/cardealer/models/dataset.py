@@ -8,6 +8,6 @@ from .resource import CardealerResource
 
 class Dataset(fairspec_metadata.Dataset):
     profile: Literal[
-        "https://datisthq.github.io/cardealer/profiles/0.4.0/dataset.json"  # x-release-please-version
+        "https://datisthq.github.io/cardealer/profiles/0.5.0/dataset.json"  # x-release-please-version
     ] = Field(alias="$schema")
     resources: list[CardealerResource] = Field(min_length=1)
