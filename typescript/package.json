@@ -6,12 +6,20 @@
   "license": "MIT",
   "author": "Evgeny Karev",
   "repository": "https://github.com/datisthq/cardealer",
+  "files": [
+    "build"
+  ],
   "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./build/index.js"
+  },
   "scripts": {
     "build": "tsgo",
     "type": "tsgo --noEmit && tsgo --noEmit -p tsconfig.test.json",
     "test": "pnpm type && pnpm test:unit",
-    "test:unit": "vp test"
+    "test:unit": "vp test",
+    "release": "pnpm publish --access public --ignore-scripts --no-git-checks"
   },
   "dependencies": {
     "@fairspec/metadata": "^0.13.1",

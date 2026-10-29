@@ -9,9 +9,6 @@ Fairspec Cardealer provides libraries for TypeScript, Python and Rust. Each one 
 matching [Fairspec](https://github.com/datisthq/fairspec) base library, so a cardealer dataset
 is also a valid Fairspec dataset, and all three pass the same conformance suite.
 
-> [!NOTE]
-> The packages are not published to the registries yet.
-
 ## TypeScript
 
 ### Installation
@@ -156,12 +153,8 @@ print(dataset)
 
 ### Installation
 
-Nothing is published to crates.io yet, so depend on the repository:
-
-```toml
-[dependencies]
-cardealer = { git = "https://github.com/datisthq/cardealer" }
-serde_json = "1"
+```bash
+cargo add cardealer serde_json
 ```
 
 ### Validation and consumption

@@ -17,8 +17,6 @@
     "lint": "vp fmt --check && vp lint",
     "prepare": "lefthook install && mkdir -p .claude && ln -sfn ../.agents/skills .claude/skills",
     "publish:profiles": "node .scripts/@publish.ts",
-    "release:py": "uv --directory python publish",
-    "release:ts": "pnpm -r publish --access public --ignore-scripts --no-git-checks",
     "scan": "pnpm leaks && pnpm vulns",
     "start": "livemark start",
     "test": "pnpm lint && pnpm type && pnpm test:unit",

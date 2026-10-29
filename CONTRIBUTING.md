@@ -14,8 +14,7 @@ Here you can find the guidelines for contributing to the extension. We welcome a
   - Python 3.12+ (with uv) - [How to Install](https://docs.astral.sh/uv/getting-started/installation)
   - Rust (with cargo) - [How to Install](https://www.rust-lang.org/tools/install)
 - **Releasing**:
-  - Configured a pending trusted publisher on [PyPI](https://pypi.org/manage/account/publishing/) matching the extension name (slug)
-  - Created an access token on [NPM](https://www.npmjs.com/settings/roll/tokens), added to [Github](https://github.com/datisthq/cardealer/settings/secrets/actions) as a repository secret `NPM_TOKEN`
+  - Trusted publishers for `datisthq/cardealer`, workflow `release.yaml`, environment `release`, on [npm](https://docs.npmjs.com/trusted-publishers), [PyPI](https://pypi.org/manage/account/publishing/) and [crates.io](https://crates.io/docs/trusted-publishing)
   - In case you use it on GitHub, updated the publishing source in [the settings](https://github.com/datisthq/cardealer/settings/pages) to `Github Actions`.
 
 ## Development

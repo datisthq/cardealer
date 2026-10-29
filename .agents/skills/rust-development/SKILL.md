@@ -1,6 +1,6 @@
 ---
 name: rust-development
-description: Use when working in rust/ - the cardealer crate, serde models that parse through fairspec-metadata. Covers commands, layout, the double-parse extension, strictness rules, the registry dependency and the no-publish rule.
+description: Use when working in rust/ - the cardealer crate, serde models that parse through fairspec-metadata. Covers commands, layout, the double-parse extension, strictness rules, the registry dependency and crates.io publishing.
 ---
 
 # Rust
@@ -16,7 +16,8 @@ on `fairspec-metadata`.
 ## Dependency and publishing
 
 `fairspec-metadata` is the published crates.io version; `rust/Cargo.lock` pins it. The crate
-has `publish = false`; turning on publishing means flipping that and adding a Rust publish job.
+publishes to crates.io from the `crates` job in `release.yaml`; check it with
+`cargo package -p cardealer` before changing its manifest.
 
 ## Layout
 

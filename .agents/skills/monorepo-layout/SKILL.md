@@ -11,9 +11,9 @@ owns only what is specific to it.
 | section        | what                                                               | ships as                         |
 | -------------- | ------------------------------------------------------------------ | -------------------------------- |
 | `standard/`    | `profiles/`, `schemas/` (normative JSON), `specs/` and `overview/` | profiles and schemas on the site |
-| `typescript/`  | zod twin on `@fairspec/metadata`                                   | npm `cardealer` (not published)  |
-| `python/`      | pydantic twin on `fairspec-metadata`                               | PyPI `cardealer` (not published) |
-| `rust/`        | serde twin on `fairspec-metadata`                                  | not published yet                |
+| `typescript/`  | zod twin on `@fairspec/metadata`                                   | npm `cardealer`                  |
+| `python/`      | pydantic twin on `fairspec-metadata`                               | PyPI `cardealer`                 |
+| `rust/`        | serde twin on `fairspec-metadata`                                  | crates.io `cardealer`            |
 | `conformance/` | language-neutral JSON cases every twin runs                        | nothing                          |
 
 Root-only: `.scripts/` (publisher `@publish.ts`, `-shared/`, `-test/*.unit.ts` run by `vp test`),
@@ -45,8 +45,10 @@ All three twins depend on the published Fairspec base libs; no `../fairspec` che
 Bump them together, in their own `chore:` commit, after running every section against the new
 versions. `@fairspec/*` is exempt from pnpm's `minimumReleaseAge`, so a fresh release installs at once.
 
-The `publish` job in `release.yaml` is still `if: false`. Turning it on: re-enable the job, set
-`publish = true` on the crate and add a Rust publish step.
+When release-please creates a release, `release.yaml` publishes each twin in its own job
+(`typescript`, `python`, `crates`), all in the `release` environment with OIDC trusted
+publishing and no tokens. Each section's `release` script (or `cargo publish -p cardealer`) is
+the one publish command; a twin that fails to publish is re-run from that job.
 
 ## Versioning
 
