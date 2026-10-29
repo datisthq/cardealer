@@ -1,6 +1,6 @@
 ---
 title: Contributing
-path: /overview/contributing/
+path: /contributing/
 icon: heart-handshake
 order: 99
 ---

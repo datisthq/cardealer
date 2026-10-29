@@ -1,8 +1,8 @@
 ---
 title: Examples
-path: /overview/examples/
-icon: file-json-2
-order: 3
+path: /examples/
+icon: file-braces
+order: 15
 ---
 
 This page provides examples of Cardealer DP files for different scenarios.

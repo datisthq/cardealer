@@ -112,11 +112,7 @@ function Landing() {
               >
                 Read the specification →
               </Link>
-              <Link
-                to="/$"
-                params={{ _splat: "overview/examples" }}
-                className={textLinkClass}
-              >
+              <Link to="/$" params={{ _splat: "examples" }} className={textLinkClass}>
                 Browse the examples →
               </Link>
             </>
@@ -154,7 +150,7 @@ function Landing() {
               </Link>
               <Link
                 to="/$"
-                params={{ _splat: "overview/examples" }}
+                params={{ _splat: "examples" }}
                 className={actionClass("ghost")}
               >
                 <FileJson2 className="size-4" />
@@ -255,20 +251,20 @@ const tools: Point[] = [
     icon: CodeXml,
     title: "TypeScript",
     description: "Zod models extending @fairspec/metadata to parse and publish datasets.",
-    link: { to: "/$", splat: "overview/software" },
+    link: { to: "/$", splat: "software/typescript" },
   },
   {
     icon: Code,
     title: "Python",
     description:
       "Pydantic models subclassing fairspec-metadata to validate and write datasets.",
-    link: { to: "/$", splat: "overview/software" },
+    link: { to: "/$", splat: "software/python" },
   },
   {
     icon: Cog,
     title: "Rust",
     description: "Serde models parsing through fairspec-metadata to read datasets.",
-    link: { to: "/$", splat: "overview/software" },
+    link: { to: "/$", splat: "software/rust" },
   },
   {
     icon: ListChecks,

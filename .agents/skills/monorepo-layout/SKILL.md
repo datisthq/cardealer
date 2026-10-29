@@ -18,9 +18,14 @@ owns only what is specific to it.
 
 Root-only: `.scripts/` (publisher `@publish.ts`, `-shared/`, `-test/*.unit.ts` run by `vp test`),
 `.release/`, `.github/`, `.agents/`, `.livemark/`, `livemark.config.ts`, `README.md`,
-`CONTRIBUTING.md`, `CHANGELOG.md`. The site renders `standard/**/*.md`, README and CONTRIBUTING;
-the page path comes from each file's `path:` frontmatter. Livemark 0.29.3 has no redirects, so a
-removed page 404s.
+`CONTRIBUTING.md`, `CHANGELOG.md`. The site renders `standard/**/*.md`, README, CONTRIBUTING and CHANGELOG;
+the page path comes from each file's `path:` frontmatter. Two nav sections split them by path:
+Standard (`/`: overview, examples, specification, contributing, then `CHANGELOG.md` patched in
+as the last article at `/changelog/` with `order: -1`) and Software (`/software/`: a flat
+Overview at `/software/overview/` then one page per twin, from `standard/software/`, no index
+page so the sidebar stays flat); a new page picks its section by its `path:` prefix. Both sections set `siteTitle: "Cardealer"` and `siteDescription: "Data exchange
+format"` for the sidebar header (the page `<title>` keeps `package.json` `title`); header links
+are Fairspec then GitHub. Livemark 0.29.3 has no redirects, so a removed page 404s.
 
 The site mimics fairspec.org: `.livemark/styles/general.css` carries Fairspec's colour tokens and
 `.livemark/components/Landing.tsx` is Fairspec's landing kit (hero carousel, sections, CTA),

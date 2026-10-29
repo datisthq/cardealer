@@ -17,8 +17,8 @@ release-please markers if a URL constant was added. Then run `pnpm type`, `pnpm 
 - `standard/profiles/dataset.json` - dataset profile; uses `{version}` placeholders
 - `standard/specs/data/<table>.md` - column tables; `standard/specs/metadata.md` - resources.
   Cite cardealer URLs with the literal `<version>` text, never a number
-- `standard/overview/{examples,software}.md` and `README.md` - examples (resources use the
-  `tableSchema` key)
+- `standard/overview/examples.md`, `standard/software/{typescript,python,rust}.md` and
+  `README.md` - examples (resources use the `tableSchema` key)
 - twins: `typescript/models/<table>.ts` (+ `enums.ts`), `python/cardealer/models/<table>.py`
   (+ `enums.py`), `rust/cardealer/src/models/<table>.rs` (+ `enums.rs`)
 - cases: `conformance/tests/<table>/*.json`
