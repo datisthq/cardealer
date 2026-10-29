@@ -11,8 +11,8 @@ owns only what is specific to it.
 | section        | what                                                               | ships as                         |
 | -------------- | ------------------------------------------------------------------ | -------------------------------- |
 | `standard/`    | `profiles/`, `schemas/` (normative JSON), `specs/` and `overview/` | profiles and schemas on the site |
-| `typescript/`  | zod twin on `@fairspec/metadata`                                   | npm `cardealer` (blocked)        |
-| `python/`      | pydantic twin on `fairspec-metadata`                               | PyPI `cardealer` (blocked)       |
+| `typescript/`  | zod twin on `@fairspec/metadata`                                   | npm `cardealer` (not published)  |
+| `python/`      | pydantic twin on `fairspec-metadata`                               | PyPI `cardealer` (not published) |
 | `rust/`        | serde twin on `fairspec-metadata`                                  | not published yet                |
 | `conformance/` | language-neutral JSON cases every twin runs                        | nothing                          |
 
@@ -34,23 +34,19 @@ Root: `pnpm type`, `pnpm test:unit` (root `vp test` plus every section), `pnpm b
 `pnpm docs:build`, `pnpm publish:profiles`. Per section: `pnpm -C <section> <script>`
 (`type`, `test:unit`, `build`). Never run lint as a task step.
 
-## Base libs are local and unreleased
+## Base libs come from the registries
 
-All three twins depend on a Fairspec checkout beside this repo (`../fairspec`):
+All three twins depend on the published Fairspec base libs; no `../fairspec` checkout is needed:
 
-- TS `"@fairspec/metadata": "link:../../fairspec/typescript/metadata"`; run
-  `pnpm -C ../fairspec/typescript build` first (its exports point at `build/`)
-- Python `[tool.uv.sources]` editable path `../../fairspec/python/metadata`
-- Rust cargo path `../../../fairspec/rust/metadata`
+- TS `"@fairspec/metadata"` from npm (`typescript/package.json`)
+- Python `fairspec-metadata` from PyPI (`python/pyproject.toml`)
+- Rust `fairspec-metadata` from crates.io (`rust/cardealer/Cargo.toml`)
 
-CI checks out this repo at `path: cardealer` and `datisthq/fairspec` at a pinned SHA at
-`path: fairspec`, with `working-directory: cardealer`. Bump the SHA deliberately, in its own
-`ci:` commit, after running every section against the new base, and regenerate `rust/Cargo.lock`
-against the new pin (procedure in `rust-development`).
+Bump them together, in their own `chore:` commit, after running every section against the new
+versions. `@fairspec/*` is exempt from pnpm's `minimumReleaseAge`, so a fresh release installs at once.
 
-The `publish` job in `release.yaml` is `if: false` until Fairspec releases its base libs. Then:
-switch the three dependencies to registry versions, drop the fairspec checkout where no longer
-needed, re-enable `publish` (it also needs the rust and fairspec setup) and add a Rust publish.
+The `publish` job in `release.yaml` is still `if: false`. Turning it on: re-enable the job, set
+`publish = true` on the crate and add a Rust publish step.
 
 ## Versioning
 

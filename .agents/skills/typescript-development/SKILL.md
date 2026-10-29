@@ -11,8 +11,7 @@ description: Use when working in typescript/ - the cardealer npm package, a zod 
 ## Commands
 
 `pnpm -C typescript type` (`tsgo --noEmit`), `test:unit` (`vp test`), `build` (`tsgo`, to
-`build/`). Needs `pnpm -C ../fairspec/typescript build` first: the dependency is
-`link:../../fairspec/typescript/metadata` and its exports point at `build/`.
+`build/`). The base is the published `@fairspec/metadata` from npm.
 
 ## Layout
 

@@ -1,6 +1,6 @@
 ---
 name: rust-development
-description: Use when working in rust/ - the cardealer crate, serde models that parse through fairspec-metadata. Covers commands, layout, the double-parse extension, strictness rules, the path dependency and the no-publish rule.
+description: Use when working in rust/ - the cardealer crate, serde models that parse through fairspec-metadata. Covers commands, layout, the double-parse extension, strictness rules, the registry dependency and the no-publish rule.
 ---
 
 # Rust
@@ -15,12 +15,8 @@ on `fairspec-metadata`.
 
 ## Dependency and publishing
 
-`fairspec-metadata = { path = "../../../fairspec/rust/metadata" }` - the unreleased local
-Fairspec checkout (CI pins it; see `monorepo-layout`). The crate has `publish = false`. Do not
-publish until Fairspec releases `fairspec-metadata` to crates.io; then switch to a registry
-version and add a Rust publish job.
-
-The committed `rust/Cargo.lock` must be generated against the CI-pinned fairspec, not the local checkout. Export the pinned `rust/` with `git -C ../fairspec archive <pin> rust | tar -x -C <tmp>/fairspec`, export this repo's `rust conformance standard` the same way into `<tmp>/cardealer`, run `cargo generate-lockfile && cargo test` in `<tmp>/cardealer/rust`, copy the `Cargo.lock` back. A local `pnpm -C rust test:unit` rewrites the lock for the local fairspec HEAD: `git checkout rust/Cargo.lock` afterwards.
+`fairspec-metadata` is the published crates.io version; `rust/Cargo.lock` pins it. The crate
+has `publish = false`; turning on publishing means flipping that and adding a Rust publish job.
 
 ## Layout
 

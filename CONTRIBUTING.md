@@ -13,7 +13,6 @@ Here you can find the guidelines for contributing to the extension. We welcome a
   - Node 24+ (with pnpm) - [How to Install](https://nodejs.org/en/download/current)
   - Python 3.12+ (with uv) - [How to Install](https://docs.astral.sh/uv/getting-started/installation)
   - Rust (with cargo) - [How to Install](https://www.rust-lang.org/tools/install)
-  - A [Fairspec](https://github.com/datisthq/fairspec) checkout beside this repository (`../fairspec`), with `pnpm -C ../fairspec/typescript build` run once - the libraries build on its unreleased base libraries
 - **Releasing**:
   - Configured a pending trusted publisher on [PyPI](https://pypi.org/manage/account/publishing/) matching the extension name (slug)
   - Created an access token on [NPM](https://www.npmjs.com/settings/roll/tokens), added to [Github](https://github.com/datisthq/cardealer/settings/secrets/actions) as a repository secret `NPM_TOKEN`

@@ -15,13 +15,13 @@ This file provides guidance to coding agents when working with code in this repo
 
 Fairspec Cardealer is one repo and one version: a standard and three hand-written libraries.
 
-| section        | what                                                          | released as                        |
-| -------------- | ------------------------------------------------------------- | ---------------------------------- |
-| `standard/`    | `profiles/`, `schemas/`, `specs/` (normative) and `overview/` | profiles and schemas on the site   |
-| `typescript/`  | zod models extending `@fairspec/metadata`                     | npm `cardealer` (publish blocked)  |
-| `python/`      | pydantic models subclassing `fairspec-metadata`               | PyPI `cardealer` (publish blocked) |
-| `rust/`        | serde models parsing through `fairspec-metadata`              | not published yet                  |
-| `conformance/` | language-neutral JSON cases every twin runs                   | —                                  |
+| section        | what                                                          | released as                      |
+| -------------- | ------------------------------------------------------------- | -------------------------------- |
+| `standard/`    | `profiles/`, `schemas/`, `specs/` (normative) and `overview/` | profiles and schemas on the site |
+| `typescript/`  | zod models extending `@fairspec/metadata`                     | npm `cardealer` (not published)  |
+| `python/`      | pydantic models subclassing `fairspec-metadata`               | PyPI `cardealer` (not published) |
+| `rust/`        | serde models parsing through `fairspec-metadata`              | not published yet                |
+| `conformance/` | language-neutral JSON cases every twin runs                   | —                                |
 
 The site (`livemark.config.ts`, `.livemark/`) renders `standard/**/*.md`, `README.md` and
 `CONTRIBUTING.md`.
@@ -38,8 +38,8 @@ The site (`livemark.config.ts`, `.livemark/`) renders `standard/**/*.md`, `READM
   three twins, the conformance cases that pin it, and the overview examples it reaches.** There are no generators:
   `standard-development` is the checklist
 - Each twin extends its language's fairspec base lib and never re-models a Fairspec field
-- The base libs are local and unreleased (`../fairspec`); publishing is blocked until Fairspec
-  releases them
+- The base libs come from the registries: npm `@fairspec/metadata`, PyPI `fairspec-metadata`,
+  crates.io `fairspec-metadata`; the `publish` job stays disabled until it is switched on deliberately
 - Conformance cases are fixed against the oracle (`.scripts/-test/conformance.unit.ts`); a failing
   twin is a twin bug
 
@@ -84,7 +84,7 @@ its area. Each is named `<subject>-<facet>`, subject first (`change-review`):
 Conventional Commits drive [release-please](https://github.com/googleapis/release-please): a
 `feat` or `fix` landing on `main` opens a Release PR. **Merging that PR is the gate** — it bumps
 the version files, tags the release and creates the GitHub release. Publishing to npm and PyPI is
-blocked until Fairspec releases its base libs.
+disabled (`if: false` on the `publish` job).
 
 - **IMPORTANT: only changes to the normative artifacts use `feat` or `fix`** — `standard/profiles/`,
   `standard/schemas/`, and `standard/specs/`. Everything else MUST be `chore`, `ci` or `docs`: the

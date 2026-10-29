@@ -72,7 +72,7 @@ in the same branch.
 
 ## Base fairspec version bump
 
-1. Bump the pinned SHA in CI (see `monorepo-layout`); rebuild the local base libs
+1. Bump the base lib versions in all three twins (see `monorepo-layout`)
 2. Update the Fairspec profile URL in `standard/schemas/*.json` if it moved
 3. Run every section; fix breakage in the twin, never by re-modelling a base field
 4. Commit `ci` or `chore`; `fix` only when normative files changed

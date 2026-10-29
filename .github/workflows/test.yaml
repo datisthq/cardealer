@@ -10,37 +10,16 @@ jobs:
   lint:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: cardealer
-
     steps:
       - name: Checkout Repo
         uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
-        with:
-          path: cardealer
-      - name: Checkout Fairspec
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
-        with:
-          repository: datisthq/fairspec
-          ref: 4c47e5e02c8a2180aad7654b215d55a49e76e868
-          path: fairspec
       - name: Setup Pnpm
         uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
-        with:
-          package_json_file: cardealer/package.json
       - name: Setup Node
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           cache: pnpm
-          cache-dependency-path: cardealer/pnpm-lock.yaml
-          node-version-file: cardealer/package.json
-      - name: Install Fairspec
-        working-directory: fairspec
-        run: pnpm install --frozen-lockfile
-      - name: Build Fairspec
-        working-directory: fairspec
-        run: pnpm -C typescript build
+          node-version-file: package.json
       - name: Install Dependencies
         run: pnpm install
       - name: Lint Repo
@@ -53,37 +32,16 @@ jobs:
   typescript:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: cardealer
-
     steps:
       - name: Checkout Repo
         uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
-        with:
-          path: cardealer
-      - name: Checkout Fairspec
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
-        with:
-          repository: datisthq/fairspec
-          ref: 4c47e5e02c8a2180aad7654b215d55a49e76e868
-          path: fairspec
       - name: Setup Pnpm
         uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
-        with:
-          package_json_file: cardealer/package.json
       - name: Setup Node
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           cache: pnpm
-          cache-dependency-path: cardealer/pnpm-lock.yaml
-          node-version-file: cardealer/package.json
-      - name: Install Fairspec
-        working-directory: fairspec
-        run: pnpm install --frozen-lockfile
-      - name: Build Fairspec
-        working-directory: fairspec
-        run: pnpm -C typescript build
+          node-version-file: package.json
       - name: Install Dependencies
         run: pnpm install
       - name: Test Typescript
@@ -92,33 +50,18 @@ jobs:
   python:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: cardealer
-
     steps:
       - name: Checkout Repo
         uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
-        with:
-          path: cardealer
-      - name: Checkout Fairspec
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
-        with:
-          repository: datisthq/fairspec
-          ref: 4c47e5e02c8a2180aad7654b215d55a49e76e868
-          path: fairspec
       - name: Setup Uv
         uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
       - name: Setup Pnpm
         uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
-        with:
-          package_json_file: cardealer/package.json
       - name: Setup Node
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           cache: pnpm
-          cache-dependency-path: cardealer/pnpm-lock.yaml
-          node-version-file: cardealer/package.json
+          node-version-file: package.json
       - name: Install Dependencies
         run: pnpm install && pnpm -C python setup
       - name: Test Python
@@ -127,21 +70,9 @@ jobs:
   rust:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: cardealer
-
     steps:
       - name: Checkout Repo
         uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
-        with:
-          path: cardealer
-      - name: Checkout Fairspec
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
-        with:
-          repository: datisthq/fairspec
-          ref: 4c47e5e02c8a2180aad7654b215d55a49e76e868
-          path: fairspec
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@b725eda525362e7cf34af9a7243cac1e3f01a7ec # stable
         with:
@@ -149,17 +80,14 @@ jobs:
       - name: Setup Rust Cache
         uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
         with:
-          workspaces: cardealer/rust
+          workspaces: rust
       - name: Setup Pnpm
         uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
-        with:
-          package_json_file: cardealer/package.json
       - name: Setup Node
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           cache: pnpm
-          cache-dependency-path: cardealer/pnpm-lock.yaml
-          node-version-file: cardealer/package.json
+          node-version-file: package.json
       - name: Install Dependencies
         run: pnpm install
       - name: Test Rust

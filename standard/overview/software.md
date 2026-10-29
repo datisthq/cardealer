@@ -10,8 +10,7 @@ matching [Fairspec](https://github.com/datisthq/fairspec) base library, so a car
 is also a valid Fairspec dataset, and all three pass the same conformance suite.
 
 > [!NOTE]
-> The libraries build on Fairspec base libraries that are not released yet, so the packages are
-> not published to the registries yet.
+> The packages are not published to the registries yet.
 
 ## TypeScript
 

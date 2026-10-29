@@ -10,7 +10,7 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-dependencies = ["fairspec-metadata", "pydantic>=2.12", "typing-extensions>=4.15"]
+dependencies = ["fairspec-metadata>=0.3.0", "pydantic>=2.12", "typing-extensions>=4.15"]
 slug = "cardealer"
 title = "Fairspec Cardealer"
 
@@ -28,9 +28,6 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = ["pytest>=9.0", "ruff>=0.15", "ty>=0.0.15"]
-
-[tool.uv.sources]
-fairspec-metadata = { path = "../../fairspec/python/metadata", editable = true }
 
 [tool.pytest.ini_options]
 addopts = "--import-mode=importlib"

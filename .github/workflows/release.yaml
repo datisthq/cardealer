@@ -81,7 +81,6 @@ jobs:
           git push
 
   publish:
-    name: Publish (blocked until fairspec releases its base libraries)
     if: false
     needs: [release]
     environment: release

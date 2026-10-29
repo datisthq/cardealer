@@ -11,8 +11,7 @@ description: Use when working in python/ - the cardealer PyPI package, pydantic 
 ## Commands
 
 `pnpm -C python setup` (`uv sync`), `type` (`uv run ty check`), `test:unit` (`uv run pytest`),
-`build` (`uv build`). The base is an editable path source
-`[tool.uv.sources] fairspec-metadata = { path = "../../fairspec/python/metadata", editable = true }`.
+`build` (`uv build`). The base is the published `fairspec-metadata` from PyPI.
 
 ## Layout
 
