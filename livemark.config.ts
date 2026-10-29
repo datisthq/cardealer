@@ -57,7 +57,7 @@ export default defineConfig({
       article: {
         title: "Contributing",
         description:
-          "How to set up the extension locally, propose changes, and ship a release.",
+          "How to report bugs and share ideas, and how team members work on the extension.",
         icon: "heart-handshake",
         path: "/contributing/",
         order: 99,
