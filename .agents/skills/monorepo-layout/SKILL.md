@@ -69,6 +69,13 @@ deletes the branch, the bot's push is rejected and the guard then fails on `main
 tagged or published. Recover by running `pnpm publish:profiles` on `main` and committing the result;
 release-please still tags the merged PR (label `autorelease: pending`) on the next push.
 
+`GITHUB_TOKEN` cannot create a release on a commit whose `.github/workflows/` differ from `main`'s
+(that needs the `workflows` permission), so release-please fails with "Resource not accessible by
+integration" when a workflow change lands after the Release PR merges. Recover by hand: push the
+tag, `gh release create` it with the changelog section, swap the PR label to
+`autorelease: tagged`, then `gh workflow run release.yaml`. A dispatched run skips release-please
+and runs the publish jobs and the deploy.
+
 ## Commit types
 
 `feat`/`fix` only for changes under `standard/profiles/`, `standard/schemas/`, `standard/specs/`.

@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   test:
@@ -15,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      created: ${{ steps.release.outputs.release_created }}
+      created: ${{ steps.release.outputs.release_created || github.event_name == 'workflow_dispatch' }}
       version: ${{ steps.release.outputs.version }}
 
     permissions:
@@ -24,6 +25,7 @@ jobs:
 
     steps:
       - name: Release Project
+        if: github.event_name == 'push'
         uses: googleapis/release-please-action@16a9c90856f42705d54a6fda1823352bdc62cf38 # v4.4.0
         id: release
         with:
@@ -32,6 +34,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Assign Release PR
+        if: github.event_name == 'push'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -40,6 +43,7 @@ jobs:
             xargs -r -I{} gh api "repos/$GITHUB_REPOSITORY/issues/{}/assignees" -f "assignees[]=roll"
 
       - name: Find Release Branch
+        if: github.event_name == 'push'
         id: branch
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
