@@ -25,7 +25,6 @@
     "vulns": "semgrep --config=p/typescript --config=p/python --config=p/nodejs --config=p/owasp-top-ten --config=p/secrets --metrics=off"
   },
   "devDependencies": {
-    "@plausible-analytics/tracker": "0.4.4",
     "@tanstack/react-router": "1.168.1",
     "@tanstack/react-start": "1.167.2",
     "@types/node": "24.5.2",
