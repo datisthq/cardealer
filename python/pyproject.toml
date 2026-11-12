@@ -27,7 +27,7 @@ build-backend = "hatchling.build"
 
 
 [dependency-groups]
-dev = ["pytest>=9.0", "ruff>=0.15", "ty>=0.0.15"]
+dev = ["pytest>=9.0", "ruff>=0.15", "ty>=0.0.101"]
 
 [tool.pytest.ini_options]
 addopts = "--import-mode=importlib"
@@ -42,5 +42,5 @@ packages = ["cardealer"]
 include = ["cardealer/models/resource.py", "cardealer/models/dataset.py"]
 
 [tool.ty.overrides.rules]
-invalid-mutable-override = "ignore"
-invalid-attribute-override = "ignore"
+incompatible-mutable-override = "ignore"
+incompatible-attribute-override = "ignore"
